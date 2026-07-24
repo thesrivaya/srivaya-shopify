@@ -119,7 +119,8 @@
               "necklace",
               "earings",
               "braclets",
-              "rings"
+              "rings",
+              "earrings"
             ],
             "show_collection_title": true,
             "show_product_count": false,
@@ -315,143 +316,6 @@
         "text_alignment": "left"
       }
     },
-    "store_metrics_wn6hKH": {
-      "type": "store-metrics",
-      "blocks": {
-        "metric_dahiHg": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "12,480",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "12480",
-            "count_decimals": 0,
-            "caption": "Orders delivered",
-            "subtext": "All time"
-          }
-        },
-        "metric_DQDNGw": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "186",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "186",
-            "count_decimals": 0,
-            "caption": "Orders today",
-            "subtext": "Updated live in editor"
-          }
-        },
-        "metric_6QVJC4": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "48,920",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "48920",
-            "count_decimals": 0,
-            "caption": "Total customers",
-            "subtext": "Till date"
-          }
-        },
-        "metric_8HHjTE": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "42",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "42",
-            "count_decimals": 0,
-            "caption": "Repeat orders today",
-            "subtext": "Returning customers"
-          }
-        }
-      },
-      "block_order": [
-        "metric_dahiHg",
-        "metric_DQDNGw",
-        "metric_6QVJC4",
-        "metric_8HHjTE"
-      ],
-      "name": "Store Metrics",
-      "settings": {
-        "label": "By the numbers",
-        "heading": "Crafted with care. Chosen with confidence.",
-        "description": "",
-        "text_alignment": "center",
-        "metrics_alignment": "center",
-        "show_index": true,
-        "show_stat_accent": true,
-        "divider_length": "medium",
-        "full_width": false,
-        "container_width": 1200,
-        "header_max_width": 640,
-        "header_spacing": 48,
-        "columns_desktop": 4,
-        "columns_tablet": "2",
-        "column_gap": 0,
-        "card_radius": 0,
-        "card_padding_y": 40,
-        "card_padding_x": 24,
-        "padding_top_desktop": 96,
-        "padding_bottom_desktop": 96,
-        "padding_top_mobile": 56,
-        "padding_bottom_mobile": 56,
-        "color_background": "#f4f0ea",
-        "color_surface": "#ede6de",
-        "color_border": "#d5cbbe",
-        "color_label": "#9a7b4f",
-        "color_heading": "#1f1a14",
-        "color_stat": "#1f1a14",
-        "color_text": "#6b6258",
-        "color_accent": "#b8956c",
-        "heading_size_desktop": 40,
-        "heading_size_mobile": 32,
-        "heading_weight": "400",
-        "stat_size_desktop": 48,
-        "stat_size_mobile": 36,
-        "stat_weight": "300",
-        "label_size": 11,
-        "text_size": 14,
-        "enable_count_up": true
-      }
-    },
-    "featured_collection_aBabXt": {
-      "type": "featured-collection",
-      "custom_css": [
-        ".title.inline-richtext {text-align: center;}"
-      ],
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "earings",
-        "products_to_show": 8,
-        "title": "Curated for You",
-        "heading_size": "h0",
-        "description": "",
-        "show_description": false,
-        "description_style": "subtitle",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 40
-      }
-    },
     "perfect_fit_audience_6A6mht": {
       "type": "perfect-fit-audience",
       "blocks": {
@@ -590,6 +454,143 @@
         "padding_bottom_desktop": 64,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "featured_collection_aBabXt": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title.inline-richtext {text-align: center;}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "earings",
+        "products_to_show": 8,
+        "title": "Curated for You",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 40
+      }
+    },
+    "store_metrics_wn6hKH": {
+      "type": "store-metrics",
+      "blocks": {
+        "metric_dahiHg": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "12,480",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "12480",
+            "count_decimals": 0,
+            "caption": "Orders delivered",
+            "subtext": "All time"
+          }
+        },
+        "metric_DQDNGw": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "186",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "186",
+            "count_decimals": 0,
+            "caption": "Orders today",
+            "subtext": "Updated live in editor"
+          }
+        },
+        "metric_6QVJC4": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "48,920",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "48920",
+            "count_decimals": 0,
+            "caption": "Total customers",
+            "subtext": "Till date"
+          }
+        },
+        "metric_8HHjTE": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "42",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "42",
+            "count_decimals": 0,
+            "caption": "Repeat orders today",
+            "subtext": "Returning customers"
+          }
+        }
+      },
+      "block_order": [
+        "metric_dahiHg",
+        "metric_DQDNGw",
+        "metric_6QVJC4",
+        "metric_8HHjTE"
+      ],
+      "name": "Store Metrics",
+      "settings": {
+        "label": "By the numbers",
+        "heading": "Crafted with care. Chosen with confidence.",
+        "description": "",
+        "text_alignment": "center",
+        "metrics_alignment": "center",
+        "show_index": true,
+        "show_stat_accent": true,
+        "divider_length": "medium",
+        "full_width": false,
+        "container_width": 1200,
+        "header_max_width": 640,
+        "header_spacing": 48,
+        "columns_desktop": 4,
+        "columns_tablet": "2",
+        "column_gap": 0,
+        "card_radius": 0,
+        "card_padding_y": 40,
+        "card_padding_x": 24,
+        "padding_top_desktop": 96,
+        "padding_bottom_desktop": 96,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#f4f0ea",
+        "color_surface": "#ede6de",
+        "color_border": "#d5cbbe",
+        "color_label": "#9a7b4f",
+        "color_heading": "#1f1a14",
+        "color_stat": "#1f1a14",
+        "color_text": "#6b6258",
+        "color_accent": "#b8956c",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "stat_size_desktop": 48,
+        "stat_size_mobile": 36,
+        "stat_weight": "300",
+        "label_size": 11,
+        "text_size": 14,
+        "enable_count_up": true
       }
     },
     "creator_reviews_marquee_ArcjCw": {
