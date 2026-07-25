@@ -294,6 +294,120 @@
         "ai_gen_block_a6601c8_aPKzrq"
       ],
       "settings": {}
+    },
+    "creator_reviews_marquee_LP6jgD": {
+      "type": "creator-reviews-marquee",
+      "blocks": {
+        "creator_review_yXVWTN": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Aditi Sharma",
+            "social_handle": "@aditi_style",
+            "creator_type": "Fashion Creator",
+            "followers": "145K",
+            "review": "The sparkle is unreal. I've received compliments every single time I wear it.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_6dm4a6": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Meera Kapoor",
+            "social_handle": "@meerakapoor",
+            "creator_type": "Lifestyle Creator",
+            "followers": "89K",
+            "review": "Elegant enough for weddings, light enough for everyday. Absolute favourite piece.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_Xr6Nix": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Riya Patel",
+            "social_handle": "@riyastyles",
+            "creator_type": "Bride",
+            "followers": "62K",
+            "review": "Wore these on my wedding week — they caught every camera flash beautifully.",
+            "platform": "youtube",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_9VKgFT": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Ananya Desai",
+            "social_handle": "@ananyad",
+            "creator_type": "Content Creator",
+            "followers": "210K",
+            "review": "Looks expensive, feels delicate, photographs like a dream. Obsessed.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_JEyNTn": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Sana Khan",
+            "social_handle": "@sanakhan",
+            "creator_type": "Customer",
+            "followers": "",
+            "review": "Gifted myself these earrings and I get asked about them constantly.",
+            "platform": "instagram",
+            "verified": false,
+            "platform_url": ""
+          }
+        },
+        "creator_review_PTUwED": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Priya Nair",
+            "social_handle": "@priyanair",
+            "creator_type": "Fashion Creator",
+            "followers": "178K",
+            "review": "The craftsmanship is quiet luxury at its best — refined, radiant, timeless.",
+            "platform": "pinterest",
+            "verified": true,
+            "platform_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "creator_review_yXVWTN",
+        "creator_review_6dm4a6",
+        "creator_review_Xr6Nix",
+        "creator_review_9VKgFT",
+        "creator_review_JEyNTn",
+        "creator_review_PTUwED"
+      ],
+      "name": "Creator Reviews Marquee",
+      "settings": {
+        "title": "Loved by creators",
+        "subtitle": "Authentic moments from creators who style our pieces every day.",
+        "background_color": "#FAF8F5",
+        "card_background": "#FFFFFF",
+        "card_border_color": "#EDE6DC",
+        "title_color": "#1C1917",
+        "subtitle_color": "#78716C",
+        "text_color": "#1C1917",
+        "muted_color": "#8A837B",
+        "accent_color": "#C9A962",
+        "card_width": 340,
+        "card_gap": 24,
+        "desktop_card_count": 4,
+        "mobile_card_count": 13,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "animation_speed": 50,
+        "pause_on_hover": true,
+        "enable_fade_edges": true,
+        "enable_hover_effect": true
+      }
     }
   },
   "order": [
@@ -301,6 +415,7 @@
     "17754835371621cc6e",
     "featured_collection_3QH7cy",
     "featured_collection_aBabXt",
-    "178376435474ed273e"
+    "178376435474ed273e",
+    "creator_reviews_marquee_LP6jgD"
   ]
 }
