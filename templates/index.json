@@ -15,7 +15,6 @@
         "ai_gen_block_1691126_JJgkjq": {
           "type": "ai_gen_block_1691126",
           "settings": {
-            "desktop_image": "shopify://shop_images/Gemini_Generated_Image_yywifkyywifkyywi.png",
             "desktop_height": 550,
             "desktop_height_unit": "px",
             "mobile_height": 300,
@@ -118,9 +117,9 @@
           "settings": {
             "collection_list": [
               "necklace",
-              "earings",
               "braclets",
-              "rings"
+              "rings",
+              "earrings"
             ],
             "show_collection_title": true,
             "show_product_count": false,
@@ -248,7 +247,6 @@
             "section_padding_top": 100,
             "section_padding_bottom": 100,
             "background_color": "#ffffff",
-            "image": "shopify://shop_images/10.2.jpg",
             "image_aspect_ratio": "3/4",
             "image_border_radius": 24,
             "headline": "The Srivaya Promise",
