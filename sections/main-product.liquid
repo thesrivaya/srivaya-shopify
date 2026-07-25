@@ -1,6 +1,6 @@
-<product-info
+  <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} product-hero-surface"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -10,6 +10,10 @@
   {% endif %}
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'srivaya-product-luxury.css' | asset_url | stylesheet_tag }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -73,15 +77,15 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="page-width">
-    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div class="page-width product-hero-shell">
+    <div class="product product-hero-luxury product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
           id="ProductInfo-{{ section.id }}"
-          class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+          class="product__info-container product-info-luxury{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -106,39 +110,55 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
-                </div>
-                {%- if product.quantity_price_breaks_configured? -%}
-                  <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
-                    <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+                <div class="sv-price-block" {{ block.shopify_attributes }}>
+                  <div id="price-{{ section.id }}" role="status">
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
                   </div>
-                {%- endif -%}
-                {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                  <div class="product__tax caption rte">
-                    {%- if cart.duties_included and cart.taxes_included -%}
-                      {{ 'products.product.duties_and_taxes_included' | t }}
-                    {%- elsif cart.taxes_included -%}
-                      {{ 'products.product.taxes_included' | t }}
-                    {%- elsif cart.duties_included -%}
-                      {{ 'products.product.duties_included' | t }}
+                  {%- if product.quantity_price_breaks_configured? -%}
+                    <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
+                      <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+                    </div>
+                  {%- endif -%}
+                  <div class="sv-price-meta">
+                    {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                      <div class="product__tax caption rte">
+                        {%- if cart.duties_included and cart.taxes_included -%}
+                          {{ 'products.product.duties_and_taxes_included' | t }}
+                        {%- elsif cart.taxes_included -%}
+                          {{ 'products.product.taxes_included' | t }}
+                        {%- elsif cart.duties_included -%}
+                          {{ 'products.product.duties_included' | t }}
+                        {%- endif -%}
+                        {%- if shop.shipping_policy.body != blank -%}
+                          {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                        {%- endif -%}
+                      </div>
                     {%- endif -%}
-                    {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      <span class="sv-badge sv-badge--ready">Ready to Ship</span>
+                      <span class="sv-avail">
+                        <span class="sv-avail__dot" aria-hidden="true"></span>
+                        In stock
+                      </span>
+                    {%- else -%}
+                      <span class="sv-avail sv-avail--oos">
+                        <span class="sv-avail__dot" aria-hidden="true"></span>
+                        {{ 'products.product.sold_out' | t }}
+                      </span>
                     {%- endif -%}
                   </div>
-                {%- endif -%}
-                <div {{ block.shopify_attributes }}>
-                  {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                  {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    {{ form | payment_terms }}
-                  {%- endform -%}
+                  <div>
+                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      {{ form | payment_terms }}
+                    {%- endform -%}
+                  </div>
                 </div>
               {%- when 'inventory' -%}
                 <p
@@ -680,193 +700,178 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-          {%- comment -%} ===== TRUST BADGES ===== {%- endcomment -%}
-          <div class="tb-badges tb-badges-{{ section.id }}">
-            <div class="tb-grid">
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <path class="tb-stroke" d="M14 24a20 20 0 1 1-2 14"/>
-                    <path class="tb-stroke" d="M12 16v9h9"/>
-                    <path class="tb-fill" d="M32 22l11 6v12l-11 6-11-6V28z" opacity=".35"/>
-                    <path class="tb-stroke" d="M32 22l11 6v12l-11 6-11-6V28z"/>
-                    <path class="tb-stroke" d="M21 28l11 6 11-6M32 34v12"/>
-                  </svg>
+
+          {%- comment -%} ===== PRODUCT METAFIELDS (Luxury UI) ===== {%- endcomment -%}
+          {%- assign mf_descriptions = product.metafields.custom.product_descriptions.value -%}
+          {%- assign mf_details = product.metafields.custom.product_details.value -%}
+          {%- assign mf_perfect_for = product.metafields.custom.product_perfect_for.value -%}
+          {%- assign mf_paired_with = product.metafields.custom.product_best_paired_with.value -%}
+          {%- assign mf_in_box = product.metafields.custom.product_what_is_in_the_box.value -%}
+          {%- assign mf_care = product.metafields.custom.care_instructions.value -%}
+
+          {%- if mf_descriptions != blank or mf_perfect_for != blank or mf_paired_with != blank -%}
+            <div class="sv-info quick-add-hidden">
+              {%- if mf_descriptions != blank -%}
+                <article class="sv-section">
+                  <h2 class="sv-section__label">Description</h2>
+                  {%- for item in mf_descriptions -%}
+                    {%- if item != blank -%}
+                      <p class="sv-section__text">{{ item }}</p>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </article>
+              {%- endif -%}
+
+              {%- if mf_perfect_for != blank -%}
+                <article class="sv-section">
+                  <h2 class="sv-section__label">Perfect For</h2>
+                  {%- for item in mf_perfect_for -%}
+                    {%- if item != blank -%}
+                      <p class="sv-section__text">{{ item }}</p>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </article>
+              {%- endif -%}
+
+              {%- if mf_paired_with != blank -%}
+                <article class="sv-section">
+                  <h2 class="sv-section__label">Best Paired With</h2>
+                  <div class="sv-tags">
+                    {%- for item in mf_paired_with -%}
+                      {%- if item != blank -%}
+                        {%- assign pair_bits = item | split: ',' -%}
+                        {%- for bit in pair_bits -%}
+                          {%- assign tag = bit | strip | remove: '.' -%}
+                          {%- if tag != blank -%}
+                            <span class="sv-tag">{{ tag }}</span>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </article>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} ===== TRUST BAR ===== {%- endcomment -%}
+          <div class="sv-trust" aria-label="Product assurances">
+            <div class="sv-trust__bar">
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
                 </div>
-                <div class="tb-label">
-                  5 Days<br>
-                  Return
-                </div>
+                <span class="sv-trust__title">Free Shipping</span>
               </div>
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <path class="tb-fill" d="M40 16c-9 1-15 6-16 14 9-1 15-6 16-14z" opacity=".55"/>
-                    <path class="tb-stroke" d="M40 16c-9 1-15 6-16 14 9-1 15-6 16-14zM26 28c2-4 6-7 12-9"/>
-                    <path class="tb-stroke" d="M10 38c4-3 9-4 14-2l8 3a6 6 0 0 0 5 0l6-3a3 3 0 0 1 3 5l-12 7a14 14 0 0 1-12 1l-12-4"/>
-                  </svg>
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
-                <div class="tb-label">
-                  Skin<br>
-                  Friendly
-                </div>
+                <span class="sv-trust__title">Premium Quality</span>
               </div>
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <rect class="tb-stroke" x="8" y="20" width="30" height="22" rx="2"/>
-                    <path class="tb-stroke" d="M38 26h10l6 8v8H38z"/>
-                    <circle class="tb-fill" cx="20" cy="46" r="4"/>
-                    <circle class="tb-stroke" cx="20" cy="46" r="4"/>
-                    <circle class="tb-fill" cx="44" cy="46" r="4"/>
-                    <circle class="tb-stroke" cx="44" cy="46" r="4"/>
-                    <path class="tb-stroke" d="M4 28h10M2 34h8"/>
-                  </svg>
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
-                <div class="tb-label">
-                  Free<br>
-                  Shipping
-                </div>
+                <span class="sv-trust__title">Made in India</span>
               </div>
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <path class="tb-stroke" d="M16 8h22l10 10v30a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/>
-                    <path class="tb-stroke" d="M38 8v10h10M22 24h14M22 30h14M22 36h8"/>
-                    <circle class="tb-fill" cx="44" cy="44" r="10"/>
-                    <circle class="tb-stroke" cx="44" cy="44" r="10"/>
-                    <path class="tb-stroke" d="M39.5 44l3 3 6-6" stroke="#fff"/>
-                  </svg>
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
                 </div>
-                <div class="tb-label">
-                  4X Lab<br>
-                  Tested
-                </div>
+                <span class="sv-trust__title">Skin Friendly</span>
               </div>
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <path class="tb-stroke" d="M24 10l6 4 8-2 4 4-2 6 6 4-4 8 2 8-8 6-6-2-4 6-6-8 2-8-6-6 4-8-2-8z"/>
-                    <path class="tb-fill" d="M30 30c-2-2-5 0-5 2.5 0 3 5 5 5 5s5-2 5-5c0-2.5-3-4.5-5-2.5z"/>
-                  </svg>
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
                 </div>
-                <div class="tb-label">
-                  Made In<br>
-                  India
-                </div>
+                <span class="sv-trust__title">Easy Returns</span>
               </div>
-              <div class="tb-item">
-                <div class="tb-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <path class="tb-fill" d="M16 26l16 24 16-24-8-12H24z" opacity=".4"/>
-                    <path class="tb-stroke" d="M16 26l16 24 16-24-8-12H24z"/>
-                    <path class="tb-stroke" d="M16 26h32M24 14l8 12 8-12M32 26v24"/>
-                    <path class="tb-stroke" d="M32 6v3M22 8l1 3M42 8l-1 3"/>
-                  </svg>
+              <div class="sv-trust__item">
+                <div class="sv-trust__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
-                <div class="tb-label">
-                  Premium<br>
-                  Quality
-                </div>
+                <span class="sv-trust__title">Lab Tested</span>
               </div>
             </div>
           </div>
+          {%- comment -%} ===== /TRUST BAR ===== {%- endcomment -%}
 
-          {%- style -%}
-            .tb-badges-{{ section.id }} { margin: 28px 0; }
-            .tb-badges-{{ section.id }} .tb-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 32px 16px;
-            }
-            .tb-badges-{{ section.id }} .tb-item {
-              display: flex; flex-direction: column; align-items: center; text-align: center;
-            }
-            .tb-badges-{{ section.id }} .tb-icon { width: 60px; height: 60px; margin-bottom: 10px; }
-            .tb-badges-{{ section.id }} .tb-icon svg { width: 100%; height: 100%; display: block; }
-            .tb-badges-{{ section.id }} .tb-stroke {
-              fill: none; stroke: #2B2B2B; stroke-width: 2;
-              stroke-linecap: round; stroke-linejoin: round;
-            }
-            .tb-badges-{{ section.id }} .tb-fill { fill: #F6CBCB; }
-            .tb-badges-{{ section.id }} .tb-label {
-              font-size: 15px; line-height: 1.3; font-weight: 500; color: #3A3A3A;
-            }
-            @media screen and (max-width: 749px) {
-              .tb-badges-{{ section.id }} .tb-grid { grid-template-columns: repeat(2, 1fr); }
-              .tb-badges-{{ section.id }} .tb-icon { width: 52px; height: 52px; }
-            }
-          {%- endstyle -%}
-          {%- comment -%} ===== /TRUST BADGES ===== {%- endcomment -%}
-          {% if product.metafields.custom.details != blank %}
-            <div class="product__accordion accordion">
-              <details id="Details-care-instruction-{{ section.id }}">
-                <summary>
-                  <div class="summary__title">
-                    {% render 'icon-accordion', icon: 'washing' %}
-                    <h2 class="h4 accordion__title inline-richtext">Product Details</h2>
+          {%- if mf_details != blank or mf_in_box != blank or mf_care != blank -%}
+            <div class="sv-acc quick-add-hidden">
+              {%- if mf_details != blank -%}
+                <details id="Details-product-details-{{ section.id }}" class="sv-fade">
+                  <summary>
+                    <h2 class="sv-acc__summary-title">Product Details</h2>
+                    <span class="sv-acc__chevron" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  </summary>
+                  <div class="sv-acc__panel">
+                    <ul class="sv-specs">
+                      {%- for item in mf_details -%}
+                        <li>
+                          <span class="sv-specs__label">{{ item.label }}</span>
+                          <span class="sv-specs__value">{{ item.value }}</span>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
                   </div>
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </summary>
-                <div class="accordion__content rte">
-                  <ul>
-                    {% for item in product.metafields.custom.details.value.details %}
-                      <li>{{ item }}</li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </details>
-            </div>
-          {% endif %}
-          <script>
-            console.log('[main-product] custom metafields', {{ product.metafields.custom | json }});
-            console.log('[main-product] care_instructions', {{ product.metafields.custom.care_instructions | json }});
-            console.log('[main-product] details', {{ product.metafields.custom.details | json }});
-            console.log('[main-product] description', {{ product.metafields.custom.description | json }});
-          </script>
-          {% if product.metafields.custom.care_instructions != blank %}
-            <div class="product__accordion accordion">
-              <details id="Details-care-instruction-{{ section.id }}">
-                <summary>
-                  <div class="summary__title">
-                    {% render 'icon-accordion', icon: 'washing' %}
-                    <h2 class="h4 accordion__title inline-richtext">Care Instructions</h2>
+                </details>
+              {%- endif -%}
+
+              {%- if mf_in_box != blank -%}
+                <details id="Details-whats-in-box-{{ section.id }}" class="sv-fade">
+                  <summary>
+                    <h2 class="sv-acc__summary-title">What's in the Box</h2>
+                    <span class="sv-acc__chevron" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  </summary>
+                  <div class="sv-acc__panel">
+                    <ul class="sv-rows">
+                      {%- for item in mf_in_box -%}
+                        {%- if item != blank -%}
+                          <li class="sv-row">
+                            <span class="sv-row__icon" aria-hidden="true">
+                              <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+                            </span>
+                            <p class="sv-row__text">{{ item }}</p>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </ul>
                   </div>
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </summary>
-                <div class="accordion__content rte">
-                  <ul>
-                    {% for item in product.metafields.custom.care_instructions.value %}
-                      <li>{{ item }}</li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </details>
-            </div>
-          {% endif %}
-          {% if product.metafields.custom.description != blank %}
-            <div class="product__accordion accordion">
-              <details id="Details-care-instruction-{{ section.id }}">
-                <summary>
-                  <div class="summary__title">
-                    {% render 'icon-accordion', icon: 'washing' %}
-                    <h2 class="h4 accordion__title inline-richtext">Description</h2>
+                </details>
+              {%- endif -%}
+
+              {%- if mf_care != blank -%}
+                <details id="Details-care-instruction-{{ section.id }}" class="sv-fade">
+                  <summary>
+                    <h2 class="sv-acc__summary-title">Care Instructions</h2>
+                    <span class="sv-acc__chevron" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  </summary>
+                  <div class="sv-acc__panel">
+                    <ul class="sv-rows">
+                      {%- for item in mf_care -%}
+                        {%- if item != blank -%}
+                          <li class="sv-row">
+                            <span class="sv-row__icon sv-row__icon--check" aria-hidden="true">
+                              <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </span>
+                            <p class="sv-row__text">{{ item }}</p>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </ul>
                   </div>
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </summary>
-                <div class="accordion__content rte">
-                  <ul>
-                    {% assign care_items = product.metafields.custom.description.value | split: '\n' %}
-                    {% for item in care_items %}
-                      {% if item != blank %}
-                        <li>{{ item }}</li>
-                      {% endif %}
-                    {% endfor %}
-                  </ul>
-                </div>
-              </details>
+                </details>
+              {%- endif -%}
             </div>
-          {% endif %}
+          {%- endif -%}
+          {%- comment -%} ===== /PRODUCT METAFIELDS ===== {%- endcomment -%}
         </section>
       </div>
     </div>
