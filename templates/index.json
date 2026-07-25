@@ -294,94 +294,6 @@
         "ai_gen_block_a6601c8_aPKzrq"
       ],
       "settings": {}
-    },
-    "brand_promise_yW6Ldx": {
-      "type": "brand-promise",
-      "blocks": {
-        "icon_B9KyzH": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "title": "Clean Compatible"
-          }
-        },
-        "icon_LFzHLc": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "title": "Thoughtfully formulated"
-          }
-        },
-        "icon_kkXiUt": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "title": "Quality craftsmanship"
-          }
-        },
-        "icon_iqECeW": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "title": "Made with care"
-          }
-        }
-      },
-      "block_order": [
-        "icon_B9KyzH",
-        "icon_LFzHLc",
-        "icon_kkXiUt",
-        "icon_iqECeW"
-      ],
-      "name": "Brand Promise",
-      "settings": {
-        "label": "Clean Compatible",
-        "heading": "Our Promise",
-        "text": "<p>Not just <strong>free of harmful and toxic chemicals</strong>, but made with ingredients that enhance the beauty of every piece and support lasting quality and craftsmanship.</p>",
-        "copy_alignment": "center",
-        "show_promise_icon": true,
-        "promise_icon": "seal",
-        "promise_icon_size": 64,
-        "media_mode": "auto",
-        "image_alt": "Our brand promise",
-        "image_aspect": "portrait",
-        "image_fit": "cover",
-        "media_radius": 16,
-        "hover_zoom": true,
-        "enable_media_depth": true,
-        "shadow_strength": "medium",
-        "icon_size": 88,
-        "icon_gap": 28,
-        "icons_per_row_desktop": "2",
-        "icons_per_row_mobile": "2",
-        "icon_shape": "rounded",
-        "icon_radius": 12,
-        "media_position": "left",
-        "full_width": false,
-        "container_width": 1200,
-        "column_gap": 48,
-        "media_max_width": 560,
-        "copy_max_width": 480,
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48,
-        "color_background": "#F7F2EC",
-        "color_surface": "#EFE7DD",
-        "color_heading": "#1F1A14",
-        "color_text": "#4A433C",
-        "color_label": "#9A7B4F",
-        "color_accent": "#B8956C",
-        "color_icon_title": "#2A241C",
-        "color_icon_bg": "#FBF8F4",
-        "color_promise_icon": "#8A6A4A",
-        "heading_size_desktop": 32,
-        "heading_size_mobile": 26,
-        "heading_weight": "600",
-        "text_size": 15,
-        "label_size": 12,
-        "icon_title_size": 14
-      }
     }
   },
   "order": [
@@ -389,7 +301,6 @@
     "17754835371621cc6e",
     "featured_collection_3QH7cy",
     "featured_collection_aBabXt",
-    "178376435474ed273e",
-    "brand_promise_yW6Ldx"
+    "178376435474ed273e"
   ]
 }
