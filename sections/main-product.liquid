@@ -818,6 +818,12 @@
               </details>
             </div>
           {% endif %}
+          <script>
+            console.log('[main-product] custom metafields', {{ product.metafields.custom | json }});
+            console.log('[main-product] care_instructions', {{ product.metafields.custom.care_instructions | json }});
+            console.log('[main-product] details', {{ product.metafields.custom.details | json }});
+            console.log('[main-product] description', {{ product.metafields.custom.description | json }});
+          </script>
           {% if product.metafields.custom.care_instructions != blank %}
             <div class="product__accordion accordion">
               <details id="Details-care-instruction-{{ section.id }}">
