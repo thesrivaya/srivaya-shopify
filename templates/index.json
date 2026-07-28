@@ -389,14 +389,14 @@
       "settings": {
         "title": "Loved by creators",
         "subtitle": "Authentic moments from creators who style our pieces every day.",
-        "background_color": "#FAF8F5",
-        "card_background": "#FFFFFF",
-        "card_border_color": "#EDE6DC",
-        "title_color": "#1C1917",
-        "subtitle_color": "#78716C",
-        "text_color": "#1C1917",
-        "muted_color": "#8A837B",
-        "accent_color": "#C9A962",
+        "background_color": "#faf8f5",
+        "card_background": "#ffffff",
+        "card_border_color": "#ede6dc",
+        "title_color": "#1c1917",
+        "subtitle_color": "#78716c",
+        "text_color": "#1c1917",
+        "muted_color": "#8a837b",
+        "accent_color": "#c9a962",
         "card_width": 340,
         "card_gap": 24,
         "desktop_card_count": 4,
@@ -408,6 +408,100 @@
         "enable_fade_edges": true,
         "enable_hover_effect": true
       }
+    },
+    "customer_reviews_marquee_9Q6UDy": {
+      "type": "customer-reviews-marquee",
+      "blocks": {
+        "review_Q7dDMN": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Priya Sharma",
+            "review_text": "Absolutely loved the quality. Looks exactly like real diamonds."
+          }
+        },
+        "review_JzHFxt": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Ananya Mehta",
+            "review_text": "The craftsmanship is exquisite. I get compliments every time I wear it."
+          }
+        },
+        "review_Bp9X8d": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Rohan Kapoor",
+            "review_text": "Gifted this to my wife — she was speechless. Packaging felt so premium."
+          }
+        },
+        "review_zmFCni": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Meera Iyer",
+            "review_text": "Elegant, lightweight, and sparkles beautifully in natural light."
+          }
+        },
+        "review_bC6tyX": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Sarah Chen",
+            "review_text": "Feels luxurious without being flashy. Perfect everyday piece."
+          }
+        },
+        "review_iNrMBQ": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Aisha Khan",
+            "review_text": "Arrived faster than expected and looked even better in person."
+          }
+        },
+        "review_LiNGhP": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Vikram Shah",
+            "review_text": "Bought the necklace for our anniversary. Flawless finish and shine."
+          }
+        },
+        "review_pkNzbU": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Emily Foster",
+            "review_text": "Soft gold tones that match everything. Truly elevated my collection."
+          }
+        }
+      },
+      "block_order": [
+        "review_Q7dDMN",
+        "review_JzHFxt",
+        "review_Bp9X8d",
+        "review_zmFCni",
+        "review_bC6tyX",
+        "review_iNrMBQ",
+        "review_LiNGhP",
+        "review_pkNzbU"
+      ],
+      "name": "Customer Reviews Marquee",
+      "settings": {
+        "heading": "Loved by our customers",
+        "description": "Real stories from people who chose pieces they love to wear every day.",
+        "background_color": "#FFFFFF",
+        "heading_color": "#1C1917",
+        "description_color": "#78716C",
+        "pill_background": "#FFFCF8",
+        "pill_border": "#EDE6DC",
+        "name_color": "#1C1917",
+        "review_text_color": "#57534E",
+        "avatar_background": "#C9A962",
+        "avatar_text_color": "#FFFFFF",
+        "gold_accent": "#C9A962",
+        "show_gold_border": true,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "border_radius": 100,
+        "show_shadow": true,
+        "desktop_speed": 55,
+        "mobile_speed": 70,
+        "pause_on_hover": true
+      }
     }
   },
   "order": [
@@ -416,6 +510,7 @@
     "featured_collection_3QH7cy",
     "featured_collection_aBabXt",
     "178376435474ed273e",
-    "creator_reviews_marquee_LP6jgD"
+    "creator_reviews_marquee_LP6jgD",
+    "customer_reviews_marquee_9Q6UDy"
   ]
 }
