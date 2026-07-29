@@ -203,6 +203,363 @@
         "padding_bottom": 36
       }
     },
+    "real_photography_trust_Nif7jn": {
+      "type": "real-photography-trust",
+      "blocks": {
+        "benefit_xphrNy": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "camera",
+            "title": "What You See Is What You Get"
+          }
+        },
+        "benefit_wfXHHn": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "diamond",
+            "title": "True Product Detail"
+          }
+        },
+        "benefit_wxMy76": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "shield",
+            "title": "Builds Trust"
+          }
+        },
+        "benefit_KLLeg8": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "sparkle",
+            "title": "No AI Images"
+          }
+        },
+        "benefit_3hQVL4": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "heart",
+            "title": "Shop With Confidence"
+          }
+        },
+        "benefit_gNgkHW": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "trophy",
+            "title": "Studio Photographed"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_xphrNy",
+        "benefit_wfXHHn",
+        "benefit_wxMy76",
+        "benefit_KLLeg8",
+        "benefit_3hQVL4",
+        "benefit_gNgkHW"
+      ],
+      "name": "Real Photography Trust",
+      "settings": {
+        "label": "Authenticity",
+        "heading": "Why Real Photography Matters",
+        "description": "Every piece is photographed in-studio from the real product—never AI-generated—so colour, craft, and detail arrive exactly as you’ll wear them.",
+        "benefits_aria_label": "Reasons real photography matters",
+        "image_alt": "Studio photograph of real jewellery",
+        "image_height": 620,
+        "image_aspect": "portrait",
+        "image_border_radius": 10,
+        "hover_zoom": true,
+        "enable_stack_effect": true,
+        "stack_spread": "medium",
+        "badge_enable": true,
+        "badge_line_1": "Real Shoot",
+        "badge_line_2": "No AI",
+        "badge_line_3": "No Filters",
+        "badge_bg": "#FBF8F4",
+        "badge_border": "#D4C4B0",
+        "badge_text": "#2A241C",
+        "badge_position": "bottom-right",
+        "badge_size": "medium",
+        "image_position": "right",
+        "full_width": false,
+        "container_width": 1200,
+        "column_gap": 72,
+        "content_max_width": 480,
+        "padding_top_desktop": 112,
+        "padding_bottom_desktop": 112,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "color_background": "#F4F0EA",
+        "color_heading": "#1F1A14",
+        "color_description": "#6B6258",
+        "color_label": "#9A7B4F",
+        "color_accent": "#B8956C",
+        "color_blush": "#EDE6DE",
+        "color_icon_bg": "#F4F0EA",
+        "color_icon": "#9A7B4F",
+        "color_benefit": "#2A241C",
+        "border_radius": 2,
+        "shadow_strength": "soft",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "description_size": 15,
+        "benefit_text_size": 14,
+        "label_size": 11,
+        "font_weight": "400",
+        "letter_spacing": -1,
+        "text_alignment": "left"
+      }
+    },
+    "perfect_fit_audience_GJxzHh": {
+      "type": "perfect-fit-audience",
+      "blocks": {
+        "audience_P9ErVY": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "A Bride",
+            "icon": "bride"
+          }
+        },
+        "audience_MqyQFf": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "A Bridesmaid",
+            "icon": "bridesmaid"
+          }
+        },
+        "audience_giFHcF": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Attending a Function",
+            "icon": "guest"
+          }
+        },
+        "audience_Fzm7z7": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Going to a Party",
+            "icon": "party"
+          }
+        },
+        "audience_JiLTGR": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Celebrating Your Day",
+            "icon": "festive"
+          }
+        },
+        "audience_pajNBN": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Birthday",
+            "icon": "birthday"
+          }
+        },
+        "audience_PeqQij": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Anniversary",
+            "icon": "anniversary"
+          }
+        },
+        "audience_MrHedB": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Everyday Elegance",
+            "icon": "everyday"
+          }
+        },
+        "audience_Mwy97q": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Festive Season",
+            "icon": "sparkle"
+          }
+        },
+        "audience_ijkFDX": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Wedding Guest",
+            "icon": "guest"
+          }
+        }
+      },
+      "block_order": [
+        "audience_P9ErVY",
+        "audience_MqyQFf",
+        "audience_giFHcF",
+        "audience_Fzm7z7",
+        "audience_JiLTGR",
+        "audience_pajNBN",
+        "audience_PeqQij",
+        "audience_MrHedB",
+        "audience_Mwy97q",
+        "audience_ijkFDX"
+      ],
+      "name": "Perfect Fit Audience",
+      "settings": {
+        "heading": "Perfect Fit For You",
+        "highlight_text": "If You Are:",
+        "subtext": "Jewellery styled for every celebration — from your wedding day to everyday elegance.",
+        "heading_alignment": "center",
+        "heading_max_width": 720,
+        "full_width": false,
+        "container_width": 1200,
+        "columns_desktop": 5,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "item_gap": 16,
+        "item_radius": 14,
+        "item_padding_y": 22,
+        "item_padding_x": 14,
+        "icon_style": "framed",
+        "enable_hover": true,
+        "use_default_pattern": true,
+        "pattern_size": 180,
+        "color_background": "#FAF8F1",
+        "color_surface": "#FFFFFF",
+        "color_heading": "#202336",
+        "color_text": "#5C5660",
+        "color_accent": "#951528",
+        "color_highlight_bg": "#951528",
+        "color_highlight_text": "#FFFFFF",
+        "color_icon": "#8A6A4A",
+        "color_icon_bg": "#FBF8F4",
+        "color_label": "#202336",
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 24,
+        "heading_weight": 600,
+        "subtext_size": 15,
+        "label_size_desktop": 15,
+        "label_size_mobile": 12,
+        "icon_size_desktop": 64,
+        "icon_size_mobile": 48,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "store_metrics_Azz743": {
+      "type": "store-metrics",
+      "blocks": {
+        "metric_cdQwLt": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "12,480",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "12480",
+            "count_decimals": 0,
+            "caption": "Orders delivered",
+            "subtext": "All time"
+          }
+        },
+        "metric_G7PVgL": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "186",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "186",
+            "count_decimals": 0,
+            "caption": "Orders today",
+            "subtext": "Updated live in editor"
+          }
+        },
+        "metric_BVRzKc": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "48,920",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "48920",
+            "count_decimals": 0,
+            "caption": "Total customers",
+            "subtext": "Till date"
+          }
+        },
+        "metric_xBGkhP": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "42",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "42",
+            "count_decimals": 0,
+            "caption": "Repeat orders today",
+            "subtext": "Returning customers"
+          }
+        }
+      },
+      "block_order": [
+        "metric_cdQwLt",
+        "metric_G7PVgL",
+        "metric_BVRzKc",
+        "metric_xBGkhP"
+      ],
+      "name": "Store Metrics",
+      "settings": {
+        "label": "By the numbers",
+        "heading": "Crafted with care. Chosen with confidence.",
+        "description": "",
+        "text_alignment": "center",
+        "metrics_alignment": "center",
+        "show_index": true,
+        "show_stat_accent": true,
+        "divider_length": "medium",
+        "full_width": false,
+        "container_width": 1200,
+        "header_max_width": 640,
+        "header_spacing": 48,
+        "columns_desktop": 4,
+        "columns_tablet": "2",
+        "column_gap": 0,
+        "card_radius": 0,
+        "card_padding_y": 40,
+        "card_padding_x": 24,
+        "padding_top_desktop": 96,
+        "padding_bottom_desktop": 96,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#F4F0EA",
+        "color_surface": "#EDE6DE",
+        "color_border": "#D5CBBE",
+        "color_label": "#9A7B4F",
+        "color_heading": "#1F1A14",
+        "color_stat": "#1F1A14",
+        "color_text": "#6B6258",
+        "color_accent": "#B8956C",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "stat_size_desktop": 48,
+        "stat_size_mobile": 36,
+        "stat_weight": "300",
+        "label_size": 11,
+        "text_size": 14,
+        "enable_count_up": true
+      }
+    },
     "featured_collection_aBabXt": {
       "type": "featured-collection",
       "custom_css": [
@@ -234,66 +591,6 @@
         "padding_top": 44,
         "padding_bottom": 40
       }
-    },
-    "178376435474ed273e": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a6601c8_aPKzrq": {
-          "type": "ai_gen_block_a6601c8",
-          "settings": {
-            "container_width": 1200,
-            "column_gap": 100,
-            "image_position": "left",
-            "section_padding_top": 100,
-            "section_padding_bottom": 100,
-            "background_color": "#ffffff",
-            "image_aspect_ratio": "3/4",
-            "image_border_radius": 24,
-            "headline": "The Srivaya Promise",
-            "headline_size": 38,
-            "headline_color": "#2d2d2d",
-            "headline_spacing": 40,
-            "tagline": "Every piece at Srivaya is professionally photographed to showcase its true beauty—so you can shop with complete confidence.",
-            "tagline_size": 15,
-            "tagline_color": "#888888",
-            "tagline_spacing": 40,
-            "button_label": "",
-            "button_link": "",
-            "button_font_size": 13,
-            "button_padding_vertical": 16,
-            "button_padding_horizontal": 40,
-            "button_border_radius": 12,
-            "button_border_width": 1,
-            "button_background_color": "#6f4b53",
-            "button_text_color": "#ffffff",
-            "button_border_color": "#6f4b53",
-            "button_hover_background_color": "#926b73",
-            "button_hover_text_color": "#ffffff",
-            "button_spacing": 40,
-            "feature_spacing": 32,
-            "icon_size": 20,
-            "icon_spacing": 16,
-            "icon_color": "#a27780",
-            "feature_font_size": 14,
-            "feature_text_color": "#888888",
-            "feature_1_icon": "camera",
-            "feature_1_text": "Original Product Photography",
-            "feature_2_icon": "award",
-            "feature_2_text": "Actual Product Images",
-            "feature_3_icon": "star",
-            "feature_3_text": "True-to-Life Colours & Finish",
-            "feature_4_icon": "diamond",
-            "feature_4_text": "Every Detail Captured with Precision",
-            "feature_5_icon": "check",
-            "feature_5_text": "What You See Is What You'll Receive"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a6601c8_aPKzrq"
-      ],
-      "settings": {}
     },
     "creator_reviews_marquee_LP6jgD": {
       "type": "creator-reviews-marquee",
@@ -483,16 +780,16 @@
       "settings": {
         "heading": "Loved by our customers",
         "description": "Real stories from people who chose pieces they love to wear every day.",
-        "background_color": "#FFFFFF",
-        "heading_color": "#1C1917",
-        "description_color": "#78716C",
-        "pill_background": "#FFFCF8",
-        "pill_border": "#EDE6DC",
-        "name_color": "#1C1917",
-        "review_text_color": "#57534E",
-        "avatar_background": "#C9A962",
-        "avatar_text_color": "#FFFFFF",
-        "gold_accent": "#C9A962",
+        "background_color": "#ffffff",
+        "heading_color": "#1c1917",
+        "description_color": "#78716c",
+        "pill_background": "#fffcf8",
+        "pill_border": "#ede6dc",
+        "name_color": "#1c1917",
+        "review_text_color": "#57534e",
+        "avatar_background": "#c9a962",
+        "avatar_text_color": "#ffffff",
+        "gold_accent": "#c9a962",
         "show_gold_border": true,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -508,8 +805,10 @@
     "1779598554163c0064",
     "17754835371621cc6e",
     "featured_collection_3QH7cy",
+    "real_photography_trust_Nif7jn",
+    "perfect_fit_audience_GJxzHh",
+    "store_metrics_Azz743",
     "featured_collection_aBabXt",
-    "178376435474ed273e",
     "creator_reviews_marquee_LP6jgD",
     "customer_reviews_marquee_9Q6UDy"
   ]
