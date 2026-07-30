@@ -26,8 +26,8 @@
     --crvm-pad-bottom: {{ section.settings.padding_bottom }}px;
     --crvm-desktop-visible: {{ section.settings.desktop_card_count }};
     --crvm-mobile-visible: {{ section.settings.mobile_card_count | times: 0.1 }};
-    --crvm-shadow: 0 8px 28px rgba(28, 25, 23, 0.07), 0 2px 8px rgba(28, 25, 23, 0.04);
-    --crvm-shadow-hover: 0 18px 48px rgba(28, 25, 23, 0.12), 0 6px 16px rgba(28, 25, 23, 0.06);
+    --crvm-shadow: 0 2px 10px rgba(49, 36, 38, 0.04);
+    --crvm-shadow-hover: 0 8px 24px rgba(49, 36, 38, 0.08);
   }
 
   #crvm-{{ sid }} {
@@ -170,7 +170,7 @@
     width: 100%;
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: color-mix(in srgb, var(--crvm-accent) 12%, #f5f0e8);
+    background: color-mix(in srgb, var(--crvm-accent) 8%, #f6f1f2);
   }
 
   #crvm-{{ sid }} .crvm__media img {
@@ -915,7 +915,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#F6F1F2"
+      "default": "#FFFFFF"
     },
     {
       "type": "color",

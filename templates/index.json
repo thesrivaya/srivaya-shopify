@@ -694,9 +694,9 @@
       "settings": {
         "title": "Loved by creators",
         "subtitle": "Authentic moments from creators who style our pieces every day.",
-        "background_color": "#f6f1f2",
+        "background_color": "#ffffff",
         "card_background": "#ffffff",
-        "card_border_color": "#e3d6d9",
+        "card_border_color": "#ece4e6",
         "title_color": "#20181a",
         "subtitle_color": "#61474d",
         "text_color": "#20181a",
