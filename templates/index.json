@@ -616,6 +616,8 @@
         "creator_review_yXVWTN": {
           "type": "creator_review",
           "settings": {
+            "creator_photo": "shopify://shop_images/25.3.jpg",
+            "profile_avatar": "shopify://shop_images/dummy-user-image.png",
             "creator_name": "Aditi Sharma",
             "social_handle": "@aditi_style",
             "creator_type": "Fashion Creator",
