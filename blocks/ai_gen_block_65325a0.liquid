@@ -1,674 +1,917 @@
 {% doc %}
-  @prompt
-    Create a fully custom, premium About Us page section for AdHouse.in — an Indian AD (American Diamond) Jewellery brand. Elegant, mobile-optimized, scroll-friendly. Warm luxury aesthetic: gold (#a46959) and blush pink (#F5E6E0) accents, cream background (#f6f1f2), rich brown text (#312426). Playfair Display for headings, clean sans-serif for body.
-    
-    Include these 9 sections in order:
-    
-    1. HERO BANNER — Headline: "✨ About AdHouse.in", Subheading: "Crafted with Love. Worn with Pride.", Tagline: "At AdHouse, we believe every woman deserves to shine — every single day." Centered layout with decorative gold divider below.
-    
-    2. OUR STORY — Title: "Our Story". Body: "It all started with a simple question — 'Why should stunning jewellery always come with a stunning price tag?' AdHouse.in was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated. We saw a gap in the market where quality AD Jewellery was either too expensive or too hard to find online. So we decided to change that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India. Every piece we curate is handpicked with love, care, and an eye for detail — because we know that jewellery isn't just an accessory, it's an emotion."
-    
-    3. WHAT IS AD JEWELLERY — Title: "What is AD Jewellery?" Intro: "AD stands for American Diamond — a premium quality cubic zirconia stone that mirrors the brilliance and sparkle of a real diamond, at a fraction of the cost." 4 feature pills: "✨ Brilliant & Eye-Catching" | "💪 Durable for Everyday Wear" | "💰 Affordable Elegance" | "👗 Perfect for Every Occasion". Blush pink background.
-    
-    4. WHY CHOOSE US — Title: "Why Choose AdHouse.in?" 6 cards in 3x2 grid: 💎 Premium Quality — "Every piece is carefully quality-checked before it reaches you" | 🚚 Pan India Delivery — "We deliver to every corner of India, quickly and safely" | 📦 Packed with Love — "Your order arrives beautifully packaged, gift-ready" | 🔄 Easy Returns — "Hassle-free return & exchange policy — no questions asked" | 💰 Affordable Luxury — "Designer looks without the designer price tag" | 🤝 Trusted Brand — "10,000+ happy customers and counting". Cards with soft shadow, 12px rounded corners, gold border on hover.
-    
-    5. OUR MISSION — Gold accent line, large italic pull quote: "To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life." Body: "We don't just sell jewellery. We help you create memories — at your best friend's wedding, your first office party, your daughter's first birthday, or just a regular Tuesday when you want to feel a little extra special."
-    
-    6. FOUNDER NOTE — Title: "A Note from Our Founder". Blush pink card with large decorative quote marks. Blockquote: "When I started AdHouse, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery. I wanted it to be affordable enough that you don't think twice, and beautiful enough that you never forget it. Every design on this website has been personally curated with that feeling in mind. Thank you for being a part of our journey — you are the reason AdHouse exists." Attribution: "— Founder, AdHouse.in"
-    
-    7. STATS BAR — Title: "Our Journey So Far 🎉". Gold background, white text. 4 animated counters using Intersection Observer + JS: 🛍️ 10,000+ Orders Delivered | ⭐ 4.8 Star Average Rating | 💍 500+ Unique Designs | 🌍 Pan India Shipping. Numbers count up when scrolled into view.
-    
-    8. SOCIAL CONNECT — Title: "Stay Connected with Us 💫". Intro: "We love seeing you shine! Tag us in your photos and be part of the AdHouse family." 5 elegant pill buttons: 📸 @adhouse.in (Instagram) | 👍 AdHouse Jewellery (Facebook) | 📌 AdHouse.in (Pinterest) | 📧 support@adhouse.in | 💬 Chat on WhatsApp
-    
-    9. CLOSING CTA — Blush pink background. Headline: "Ready to Find Your Next Favourite Piece?" Subtext: "Explore our collection of stunning AD jewellery curated just for you." Large gold "Shop Now" button linking to /collections/all.
-    
-    Design: fully responsive, fade-in scroll animations via Intersection Observer, animated number counters, gold dividers between sections, 12px rounded cards, subtle box shadows, 60px padding desktop / 40px mobile.
+  Premium About Us page for Srivaya — mauve brand palette, homepage typography, soft surfaces.
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-about-adhouse-{{ ai_gen_id }} {
+  .sv-about-{{ ai_gen_id }} {
+    --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --sv-ink: #20181a;
+    --sv-body: #61474d;
+    --sv-accent: #6f4b53;
+    --sv-accent-deep: #513c40;
+    --sv-soft: #f6f1f2;
+    --sv-pale: #ece4e6;
+    --sv-white: #ffffff;
     display: block;
     width: 100%;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #312426;
-    background-color: #f6f1f2;
+    color: var(--sv-body);
+    background: var(--sv-white);
   }
 
-  .ai-about-section-{{ ai_gen_id }} {
-    padding: 60px 40px;
+  .sv-about-{{ ai_gen_id }} .sv-reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(18px);
+    transition: opacity 0.75s var(--sv-ease), transform 0.75s var(--sv-ease);
   }
 
-  .ai-about-section-{{ ai_gen_id }}.ai-visible-{{ ai_gen_id }} {
+  .sv-about-{{ ai_gen_id }} .sv-reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 
-  .ai-about-container-{{ ai_gen_id }} {
-    max-width: 1200px;
+  @media (prefers-reduced-motion: reduce) {
+    .sv-about-{{ ai_gen_id }} .sv-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-wrap {
+    max-width: 1120px;
     margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
-  .ai-about-hero-{{ ai_gen_id }} {
-    text-align: center;
-    padding: 80px 40px;
-    background: #F7EDE8;
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-wrap {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
   }
 
-  .ai-about-hero-headline-{{ ai_gen_id }} {
-    font-size: 48px;
-    font-weight: 700;
-    color: #312426;
-    margin: 0 0 16px;
-    line-height: 1.2;
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sv-accent);
   }
 
-  .ai-about-hero-subheading-{{ ai_gen_id }} {
-    font-size: 48px;
-    color: #a46959;
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow::before,
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-title {
     margin: 0 0 20px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  .ai-about-hero-tagline-{{ ai_gen_id }} {
-    font-size: 18px;
-    color: #a46959;
-    margin: 0 0 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    opacity: 0.9;
-  }
-
-  .ai-about-divider-{{ ai_gen_id }} {
-    width: 80px;
-    height: 3px;
-    background-color: #a46959;
-    margin: 0 auto;
-    border-radius: 2px;
-  }
-
-  .ai-about-title-{{ ai_gen_id }} {
-    font-size: 36px;
-    font-weight: 700;
-    color: #312426;
-    margin: 0 0 24px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-style: var(--font-heading-style, normal);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--sv-ink);
     text-align: center;
+    text-wrap: balance;
   }
 
-  .ai-about-body-{{ ai_gen_id }} {
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-title {
+      font-size: 40px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-body {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: var(--font-body-family, sans-serif);
     font-size: 16px;
-    line-height: 1.8;
-    color: #312426;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+    line-height: 1.75;
+    color: var(--sv-body);
   }
 
-  .ai-about-pink-bg-{{ ai_gen_id }} {
-    background-color: #f7f7f7;
+  .sv-about-{{ ai_gen_id }} .sv-body p {
+    margin: 0 0 16px;
   }
 
-  .ai-about-gold-bg-{{ ai_gen_id }} {
-    background-color: #f7f7f7;
-    color: #a46959;
+  .sv-about-{{ ai_gen_id }} .sv-body p:last-child {
+    margin-bottom: 0;
   }
 
-  .ai-about-gold-bg-{{ ai_gen_id }} .ai-about-title-{{ ai_gen_id }},
-  .ai-about-gold-bg-{{ ai_gen_id }} .ai-about-body-{{ ai_gen_id }} {
-    color: #a46959;
-  }
-
-  .ai-about-intro-{{ ai_gen_id }} {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #312426;
-    max-width: 800px;
-    margin: 0 auto 32px;
+  .sv-about-{{ ai_gen_id }} .sv-intro {
+    max-width: 640px;
+    margin: 0 auto 28px;
     text-align: center;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
   }
 
-  .ai-about-pills-{{ ai_gen_id }} {
+  /* Hero */
+  .sv-about-{{ ai_gen_id }} .sv-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    text-align: center;
+    padding: 70px 24px 55px;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 0%, color-mix(in srgb, var(--sv-soft) 88%, #fff) 0%, transparent 70%),
+      linear-gradient(180deg, var(--sv-soft) 0%, var(--sv-white) 100%);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero {
+      padding: 100px 48px 75px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero-title {
+      font-size: 40px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-text {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--sv-body);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero-text {
+      font-size: 18px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px auto 0;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule span {
+    width: 40px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 35%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule svg {
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+  }
+
+  /* Story / Mission */
+  .sv-about-{{ ai_gen_id }} .sv-section {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-section {
+      padding: 80px 0;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-section--soft {
+    background: linear-gradient(180deg, var(--sv-white) 0%, var(--sv-soft) 40%, var(--sv-soft) 100%);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-section--blush {
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, var(--sv-soft) 90%, #fff), transparent 70%),
+      linear-gradient(180deg, var(--sv-white) 0%, var(--sv-soft) 55%, var(--sv-white) 100%);
+  }
+
+  /* Pills */
+  .sv-about-{{ ai_gen_id }} .sv-pills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .ai-about-pill-{{ ai_gen_id }} {
-    background-color: #ffffff;
-    padding: 16px 20px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    color: #312426;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-pills {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
   }
 
-  .ai-about-cards-{{ ai_gen_id }} {
+  @media screen and (min-width: 990px) {
+    .sv-about-{{ ai_gen_id }} .sv-pills {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 64px;
+    padding: 16px 18px;
+    background: var(--sv-white);
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(49, 36, 38, 0.05);
+    text-align: center;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--sv-ink);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-pill svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    color: var(--sv-accent);
+  }
+
+  /* Why cards */
+  .sv-about-{{ ai_gen_id }} .sv-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  .ai-about-card-{{ ai_gen_id }} {
-    background-color: #ffffff;
-    padding: 28px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
   }
 
-  .ai-about-card-{{ ai_gen_id }}:hover {
-    border-color: #a4695947;
-    box-shadow: 0 4px 16px rgba(164, 105, 89, 0.13);
-    transform: translateY(-2px);
+  @media screen and (min-width: 990px) {
+    .sv-about-{{ ai_gen_id }} .sv-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
   }
 
-  .ai-about-card-icon-{{ ai_gen_id }} {
-    font-size: 32px;
-    margin-bottom: 12px;
+  .sv-about-{{ ai_gen_id }} .sv-card {
+    background: var(--sv-white);
+    border: none;
+    border-radius: 18px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(49, 36, 38, 0.05);
+    transition: transform 0.45s var(--sv-ease), box-shadow 0.45s var(--sv-ease);
   }
 
-  .ai-about-card-title-{{ ai_gen_id }} {
-    font-size: 18px;
-    font-weight: 700;
-    color: #312426;
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(49, 36, 38, 0.08);
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-card-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--sv-soft);
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-card-title {
     margin: 0 0 8px;
-  }
-
-  .ai-about-card-text-{{ ai_gen_id }} {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #312426;
-    margin: 0;
-  }
-
-  .ai-about-mission-{{ ai_gen_id }} {
-    position: relative;
-    padding-left: 20px;
-    border-left: 4px solid #a46959;
-    max-width: 800px;
-    margin: 0 auto 32px;
-  }
-
-  .ai-about-mission-quote-{{ ai_gen_id }} {
-    font-size: 28px;
-    font-style: italic;
-    line-height: 1.5;
-    color: #312426;
-    margin: 0 0 24px;
-  }
-
-  .ai-about-founder-card-{{ ai_gen_id }} {
-    background-color: #F7EDE8;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .ai-about-quote-mark-{{ ai_gen_id }} {
-    font-size: 80px;
-    color: #a46959;
-    line-height: 1;
-    opacity: 0.3;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-  }
-
-  .ai-about-blockquote-{{ ai_gen_id }} {
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
     font-size: 18px;
-    line-height: 1.7;
-    color: #a46959;
-    margin: 0 0 16px;
+    letter-spacing: -0.015em;
+    color: var(--sv-ink);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-card-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--sv-body);
+  }
+
+  /* Mission */
+  .sv-about-{{ ai_gen_id }} .sv-mission-quote {
+    max-width: 760px;
+    margin: 0 auto 24px;
+    padding: 0 0 0 20px;
+    border-left: 2px solid color-mix(in srgb, var(--sv-accent) 55%, transparent);
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-mission-quote {
+      font-size: 28px;
+      padding-left: 24px;
+    }
+  }
+
+  /* Founder */
+  .sv-about-{{ ai_gen_id }} .sv-founder {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 28px 32px;
+    background: var(--sv-white);
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 16px 48px rgba(49, 36, 38, 0.07);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-founder {
+      padding: 44px 40px 36px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-mark {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    font-family: var(--font-heading-family, Georgia, serif);
+    font-size: 72px;
+    line-height: 1;
+    color: var(--sv-accent);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-quote {
     position: relative;
     z-index: 1;
-    font-style: italic;
-  }
-
-  .ai-about-attribution-{{ ai_gen_id }} {
+    margin: 0 0 18px;
+    font-family: var(--font-body-family, sans-serif);
     font-size: 16px;
-    font-weight: 600;
-    color: #a46959;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--sv-body);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-founder-quote {
+      font-size: 17px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-attr {
+    margin: 0;
     text-align: right;
-    margin: 0;
-  }
-
-  .ai-about-stats-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
-    max-width: 1000px;
-    margin: 32px auto 0;
-  }
-
-  .ai-about-stat-{{ ai_gen_id }} {
-    text-align: center;
-  }
-
-  .ai-about-stat-icon-{{ ai_gen_id }} {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
-
-  .ai-about-stat-number-{{ ai_gen_id }} {
-    font-size: 42px;
-    font-weight: 700;
-    color: #312426;
-    margin: 0 0 4px;
-    line-height: 1;
-  }
-
-  .ai-about-stat-label-{{ ai_gen_id }} {
-    font-size: 15px;
-    color: #312426;
-    margin: 0;
-  }
-
-  .ai-about-social-buttons-{{ ai_gen_id }} {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    max-width: 800px;
-    margin: 32px auto 0;
-  }
-
-  .ai-about-social-btn-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background-color: #ffffff;
-    color: #312426;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    letter-spacing: 0.04em;
+    color: var(--sv-accent);
   }
 
-  .ai-about-social-btn-{{ ai_gen_id }}:hover {
-    background-color: #a46959;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  /* Stats */
+  .sv-about-{{ ai_gen_id }} .sv-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 960px;
+    margin: 8px auto 0;
   }
 
-  .ai-about-cta-{{ ai_gen_id }} {
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-stats {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-stat {
     text-align: center;
+    padding: 24px 12px;
+    background: var(--sv-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(49, 36, 38, 0.05);
   }
 
-  .ai-about-cta-headline-{{ ai_gen_id }} {
+  .sv-about-{{ ai_gen_id }} .sv-stat-number {
+    margin: 0 0 8px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
     font-size: 32px;
-    font-weight: 700;
-    color: #312426;
-    margin: 0 0 12px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--sv-ink);
   }
 
-  .ai-about-cta-subtext-{{ ai_gen_id }} {
-    font-size: 18px;
-    color: #312426;
-    margin: 0 0 32px;
-  }
-
-  .ai-about-cta-button-{{ ai_gen_id }} {
-    display: inline-block;
-    padding: 16px 48px;
-    background-color: #a46959;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-  }
-
-  .ai-about-cta-button-{{ ai_gen_id }}:hover {
-    background-color: #c29d2f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
-  }
-
-  @media screen and (max-width: 749px) {
-    .ai-about-section-{{ ai_gen_id }} {
-      padding: 40px 20px;
-    }
-
-    .ai-about-hero-{{ ai_gen_id }} {
-      padding: 60px 20px;
-    }
-
-    .ai-about-hero-headline-{{ ai_gen_id }} {
-      font-size: 32px;
-    }
-
-    .ai-about-hero-subheading-{{ ai_gen_id }} {
-      font-size: 20px;
-    }
-
-    .ai-about-hero-tagline-{{ ai_gen_id }} {
-      font-size: 16px;
-    }
-
-    .ai-about-title-{{ ai_gen_id }} {
-      font-size: 28px;
-    }
-
-    .ai-about-body-{{ ai_gen_id }} {
-      font-size: 15px;
-    }
-
-    .ai-about-cards-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-    }
-
-    .ai-about-mission-quote-{{ ai_gen_id }} {
-      font-size: 22px;
-    }
-
-    .ai-about-founder-card-{{ ai_gen_id }} {
-      padding: 30px 20px;
-    }
-
-    .ai-about-quote-mark-{{ ai_gen_id }} {
-      font-size: 60px;
-      top: 10px;
-      left: 15px;
-    }
-
-    .ai-about-blockquote-{{ ai_gen_id }} {
-      font-size: 16px;
-    }
-
-    .ai-about-stat-number-{{ ai_gen_id }} {
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-stat-number {
       font-size: 36px;
     }
+  }
 
-    .ai-about-cta-headline-{{ ai_gen_id }} {
-      font-size: 26px;
+  .sv-about-{{ ai_gen_id }} .sv-stat-label {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--sv-body);
+  }
+
+  /* Social */
+  .sv-about-{{ ai_gen_id }} .sv-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 20px;
+    background: var(--sv-white);
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.06);
+    text-decoration: none;
+    color: var(--sv-ink);
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.35s var(--sv-ease), box-shadow 0.35s var(--sv-ease), color 0.35s var(--sv-ease);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-social svg {
+    width: 16px;
+    height: 16px;
+    color: var(--sv-accent);
+  }
+
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-social:hover {
+      transform: translateY(-2px);
+      color: var(--sv-accent-deep);
+      box-shadow: 0 12px 26px rgba(49, 36, 38, 0.09);
     }
+  }
 
-    .ai-about-cta-subtext-{{ ai_gen_id }} {
-      font-size: 16px;
+  /* CTA */
+  .sv-about-{{ ai_gen_id }} .sv-cta {
+    text-align: center;
+    padding: 70px 24px;
+    background: linear-gradient(180deg, var(--sv-white) 0%, var(--sv-soft) 45%, var(--sv-soft) 100%);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-cta {
+      padding: 90px 48px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-cta-text {
+    max-width: 520px;
+    margin: 0 auto 28px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 200px;
+    padding: 16px 28px;
+    background: {{ block.settings.cta_button_bg | default: '#6f4b53' }};
+    color: {{ block.settings.cta_button_text | default: '#ffffff' }};
+    border: 1px solid rgba(43, 43, 43, 0.35);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-cta-btn:hover {
+      background: {{ block.settings.cta_button_hover | default: '#513c40' }};
+      border-color: #312426;
     }
   }
 {% endstyle %}
 
-<about-adhouse-{{ ai_gen_id }} class="ai-about-adhouse-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <section class="ai-about-section-{{ ai_gen_id }} ai-about-hero-{{ ai_gen_id }}">
-    <p class="ai-about-hero-subheading-{{ ai_gen_id }}">Crafted with Love, Worn with Pride.</p>
-    <p class="ai-about-hero-tagline-{{ ai_gen_id }}">At AdHouse, we believe every woman deserves to shine — every single day.</p>
-    <div class="ai-about-divider-{{ ai_gen_id }}"></div>
-  </section>
-
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">Our Story</h2>
-      <div class="ai-about-body-{{ ai_gen_id }}">
-        <p>It all started with a simple question — 'Why should stunning jewellery always come with a stunning price tag?' AdHouse.in was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p>
-        <p>We saw a gap in the market where quality AD Jewellery was either too expensive or too hard to find online. So we decided to change that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p>
-        <p>Every piece we curate is handpicked with love, care, and an eye for detail — because we know that jewellery isn't just an accessory, it's an emotion.</p>
+<about-srivaya-{{ ai_gen_id }} class="sv-about-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <section class="sv-hero">
+    <div class="sv-hero-inner sv-reveal" data-sv-reveal>
+      <p class="sv-eyebrow">{{ block.settings.hero_eyebrow | default: 'About Us' }}</p>
+      <h1 class="sv-hero-title">{{ block.settings.hero_title | default: 'Crafted with Love, Worn with Pride.' }}</h1>
+      <p class="sv-hero-text">{{ block.settings.hero_text | default: 'At Srivaya, we believe every woman deserves to shine — every single day.' }}</p>
+      <div class="sv-hero-rule" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.8 7.2 4.8 11.2 6 7.2 7.2 6 11.2 4.8 7.2 0.8 6 4.8 4.8Z"/></svg>
+        <span></span>
       </div>
     </div>
   </section>
 
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">What is AD Jewellery?</h2>
-      <p class="ai-about-intro-{{ ai_gen_id }}">AD stands for American Diamond — a premium quality cubic zirconia stone that mirrors the brilliance and sparkle of a real diamond, at a fraction of the cost.</p>
-      <div class="ai-about-pills-{{ ai_gen_id }}">
-        <div class="ai-about-pill-{{ ai_gen_id }}">✨ Brilliant & Eye-Catching</div>
-        <div class="ai-about-pill-{{ ai_gen_id }}">💪 Durable for Everyday Wear</div>
-        <div class="ai-about-pill-{{ ai_gen_id }}">💰 Affordable Elegance</div>
-        <div class="ai-about-pill-{{ ai_gen_id }}">👗 Perfect for Every Occasion</div>
+  <section class="sv-section">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.story_title | default: 'Our Story' }}</h2>
+      <div class="sv-body">
+        {% if block.settings.story_body != blank %}
+          {{ block.settings.story_body }}
+        {% else %}
+          <p>It all started with a simple question — why should stunning jewellery always come with a stunning price tag? Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p>
+          <p>We saw a gap in the market where quality AD Jewellery was either too expensive or too hard to find online. So we decided to change that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p>
+          <p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>
+        {% endif %}
       </div>
     </div>
   </section>
 
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">Why Choose AD House?</h2>
-      <div class="ai-about-cards-{{ ai_gen_id }}">
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">💎</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Premium Quality</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">Every piece is carefully quality-checked before it reaches you</p>
+  <section class="sv-section sv-section--soft">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.ad_title | default: 'What is AD Jewellery?' }}</h2>
+      <p class="sv-intro">{{ block.settings.ad_intro | default: 'AD stands for American Diamond — a premium quality cubic zirconia stone that mirrors the brilliance and sparkle of a real diamond, at a fraction of the cost.' }}</p>
+      <div class="sv-pills">
+        <div class="sv-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></svg>
+          {{ block.settings.pill_1 | default: 'Brilliant & Eye-Catching' }}
         </div>
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">🚚</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Pan India Delivery</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">We deliver to every corner of India, quickly and safely</p>
+        <div class="sv-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+          {{ block.settings.pill_2 | default: 'Durable for Everyday Wear' }}
         </div>
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">📦</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Packed with Love</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">Your order arrives beautifully packaged, gift-ready</p>
+        <div class="sv-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10.5h3.2a1.8 1.8 0 0 1 0 3.6H9.5"/></svg>
+          {{ block.settings.pill_3 | default: 'Affordable Elegance' }}
         </div>
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">🔄</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Easy Returns</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">Hassle-free return & exchange policy — no questions asked</p>
-        </div>
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">💰</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Affordable Luxury</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">Designer looks without the designer price tag</p>
-        </div>
-        <div class="ai-about-card-{{ ai_gen_id }}">
-          <div class="ai-about-card-icon-{{ ai_gen_id }}">🤝</div>
-          <h3 class="ai-about-card-title-{{ ai_gen_id }}">Trusted Brand</h3>
-          <p class="ai-about-card-text-{{ ai_gen_id }}">10,000+ happy customers and counting</p>
+        <div class="sv-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          {{ block.settings.pill_4 | default: 'Perfect for Every Occasion' }}
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">Our Mission</h2>
-      <div class="ai-about-mission-{{ ai_gen_id }}">
-        <p class="ai-about-mission-quote-{{ ai_gen_id }}">To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life.</p>
-      </div>
-      <div class="ai-about-body-{{ ai_gen_id }}">
-        <p>We don't just sell jewellery. We help you create memories — at your best friend's wedding, your first office party, your daughter's first birthday, or just a regular Tuesday when you want to feel a little extra special.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">A Note from Our Founder</h2>
-      <div class="ai-about-founder-card-{{ ai_gen_id }}">
-        <div class="ai-about-quote-mark-{{ ai_gen_id }}">"</div>
-        <p class="ai-about-blockquote-{{ ai_gen_id }}">When I started AdHouse, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery. I wanted it to be affordable enough that you don't think twice, and beautiful enough that you never forget it. Every design on this website has been personally curated with that feeling in mind. Thank you for being a part of our journey — you are the reason AdHouse exists.</p>
-        <p class="ai-about-attribution-{{ ai_gen_id }}">— Founder, AdHouse.in</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="ai-about-section-{{ ai_gen_id }} ai-about-gold-bg-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">Our Journey So Far 🎉</h2>
-      <div class="ai-about-stats-{{ ai_gen_id }}">
-        <div class="ai-about-stat-{{ ai_gen_id }}">
-          <div class="ai-about-stat-icon-{{ ai_gen_id }}">🛍️</div>
-          <div class="ai-about-stat-number-{{ ai_gen_id }}" data-target="10000">0</div>
-          <p class="ai-about-stat-label-{{ ai_gen_id }}">Orders Delivered</p>
+  <section class="sv-section">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.why_title | default: 'Why Choose Srivaya?' }}</h2>
+      <div class="sv-cards">
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_1_title | default: 'Premium Quality' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_1_text | default: 'Every piece is carefully quality-checked before it reaches you.' }}</p>
         </div>
-        <div class="ai-about-stat-{{ ai_gen_id }}">
-          <div class="ai-about-stat-icon-{{ ai_gen_id }}">⭐</div>
-          <div class="ai-about-stat-number-{{ ai_gen_id }}" data-target="4.8">0</div>
-          <p class="ai-about-stat-label-{{ ai_gen_id }}">Star Average Rating</p>
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_2_title | default: 'Pan India Delivery' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_2_text | default: 'We deliver to every corner of India, quickly and safely.' }}</p>
         </div>
-        <div class="ai-about-stat-{{ ai_gen_id }}">
-          <div class="ai-about-stat-icon-{{ ai_gen_id }}">💍</div>
-          <div class="ai-about-stat-number-{{ ai_gen_id }}" data-target="500">0</div>
-          <p class="ai-about-stat-label-{{ ai_gen_id }}">Unique Designs</p>
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16v11H4z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_3_title | default: 'Packed with Love' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_3_text | default: 'Your order arrives beautifully packaged, gift-ready.' }}</p>
         </div>
-        <div class="ai-about-stat-{{ ai_gen_id }}">
-          <div class="ai-about-stat-icon-{{ ai_gen_id }}">🌍</div>
-          <div class="ai-about-stat-number-{{ ai_gen_id }}" data-target="1">0</div>
-          <p class="ai-about-stat-label-{{ ai_gen_id }}">Pan India Shipping</p>
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_4_title | default: 'Easy Returns' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_4_text | default: 'Hassle-free return & exchange policy — no questions asked.' }}</p>
+        </div>
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M8 8h5.5a2.5 2.5 0 0 1 0 5H8h6a2.5 2.5 0 0 1 0 5H8"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_5_title | default: 'Affordable Luxury' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_5_text | default: 'Designer looks without the designer price tag.' }}</p>
+        </div>
+        <div class="sv-card">
+          <div class="sv-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm11 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3ZM3 19c.8-3 2.8-4.5 5-4.5S12.2 16 13 19M11 19c.8-3 2.8-4.5 5-4.5S19.2 16 20 19"/></svg></div>
+          <h3 class="sv-card-title">{{ block.settings.why_6_title | default: 'Trusted Brand' }}</h3>
+          <p class="sv-card-text">{{ block.settings.why_6_text | default: '10,000+ happy customers and counting.' }}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ai-about-section-{{ ai_gen_id }}">
-    <div class="ai-about-container-{{ ai_gen_id }}">
-      <h2 class="ai-about-title-{{ ai_gen_id }}">Stay Connected with Us 💫</h2>
-      <p class="ai-about-intro-{{ ai_gen_id }}">We love seeing you shine! Tag us in your photos and be part of the AdHouse family.</p>
-      {% comment %} <div class="ai-about-social-buttons-{{ ai_gen_id }}">
-        <a href="https://www.instagram.com/adhouse.in" class="ai-about-social-btn-{{ ai_gen_id }}" target="_blank" rel="noopener">
-          📸 @adhouse.in
-        </a>
-        <a href="https://www.facebook.com/adhousejewellery" class="ai-about-social-btn-{{ ai_gen_id }}" target="_blank" rel="noopener">
-          👍 AdHouse Jewellery
-        </a>
-        <a href="https://www.pinterest.com/adhouse" class="ai-about-social-btn-{{ ai_gen_id }}" target="_blank" rel="noopener">
-          📌 AdHouse.in
-        </a>
-        <a href="mailto:support@adhouse.in" class="ai-about-social-btn-{{ ai_gen_id }}">
-          📧 support@adhouse.in
-        </a>
-        <a href="https://wa.me/919876543210" class="ai-about-social-btn-{{ ai_gen_id }}" target="_blank" rel="noopener">
-          💬 Chat on WhatsApp
-        </a>
-      </div> {% endcomment %}
+  <section class="sv-section sv-section--blush">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.mission_title | default: 'Our Mission' }}</h2>
+      {% if block.settings.mission_quote != blank %}
+        <p class="sv-mission-quote">{{ block.settings.mission_quote }}</p>
+      {% else %}
+        <p class="sv-mission-quote">To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life.</p>
+      {% endif %}
+      <div class="sv-body">
+        {% if block.settings.mission_body != blank %}
+          <p>{{ block.settings.mission_body }}</p>
+        {% else %}
+          <p>We don't just sell jewellery. We help you create memories — at your best friend's wedding, your first office party, your daughter's first birthday, or just a regular Tuesday when you want to feel a little extra special.</p>
+        {% endif %}
+      </div>
     </div>
   </section>
-</about-adhouse-{{ ai_gen_id }}>
+
+  <section class="sv-section">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.founder_title | default: 'A Note from Our Founder' }}</h2>
+      <div class="sv-founder">
+        <div class="sv-founder-mark" aria-hidden="true">“</div>
+        {% if block.settings.founder_quote != blank %}
+          <p class="sv-founder-quote">{{ block.settings.founder_quote }}</p>
+        {% else %}
+          <p class="sv-founder-quote">When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery. I wanted it to be affordable enough that you don't think twice, and beautiful enough that you never forget it. Every design on this website has been personally curated with that feeling in mind. Thank you for being a part of our journey — you are the reason Srivaya exists.</p>
+        {% endif %}
+        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: '— Founder, Srivaya' }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-section sv-section--soft" data-sv-stats>
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.stats_title | default: 'Our Journey So Far' }}</h2>
+      <div class="sv-stats">
+        <div class="sv-stat">
+          <p class="sv-stat-number" data-target="{{ block.settings.stat_1_value | default: 10000 }}" data-suffix="+">0</p>
+          <p class="sv-stat-label">{{ block.settings.stat_1_label | default: 'Orders Delivered' }}</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat-number" data-target="{{ block.settings.stat_2_value | default: '4.8' }}" data-decimals="1">0</p>
+          <p class="sv-stat-label">{{ block.settings.stat_2_label | default: 'Star Average Rating' }}</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat-number" data-target="{{ block.settings.stat_3_value | default: 500 }}" data-suffix="+">0</p>
+          <p class="sv-stat-label">{{ block.settings.stat_3_label | default: 'Unique Designs' }}</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat-number" data-static="{{ block.settings.stat_4_value | default: 'Pan India' }}">{{ block.settings.stat_4_value | default: 'Pan India' }}</p>
+          <p class="sv-stat-label">{{ block.settings.stat_4_label | default: 'Shipping Coverage' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-section">
+    <div class="sv-wrap sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.social_title | default: 'Stay Connected with Us' }}</h2>
+      <p class="sv-intro">{{ block.settings.social_text | default: 'We love seeing you shine. Tag us in your photos and be part of the Srivaya family.' }}</p>
+      <div class="sv-socials">
+        {% if block.settings.instagram_url != blank %}
+          <a class="sv-social" href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.2-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-3.2 1.7-4.8 4.9-4.9C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-2.2.1-3.2 1.1-3.3 3.3-.1 1.2-.1 1.5-.1 4.6s0 3.5.1 4.6c.1 2.2 1.1 3.2 3.3 3.3 1.2.1 1.5.1 4.7.1s3.5 0 4.6-.1c2.2-.1 3.3-1.1 3.3-3.3.1-1.2.1-1.5.1-4.6s0-3.5-.1-4.6c-.1-2.2-1.1-3.2-3.3-3.3-1.1-.1-1.5-.1-4.6-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm5.1-8.4a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3Z"/></svg>
+            Instagram
+          </a>
+        {% endif %}
+        {% if block.settings.facebook_url != blank %}
+          <a class="sv-social" href="{{ block.settings.facebook_url }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
+            Facebook
+          </a>
+        {% endif %}
+        {% if block.settings.youtube_url != blank %}
+          <a class="sv-social" href="{{ block.settings.youtube_url }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a3 3 0 0 0-2.1-2.1C18.6 4.6 12 4.6 12 4.6s-6.6 0-8.4.5A3 3 0 0 0 1.5 7.2 31.5 31.5 0 0 0 1 12a31.5 31.5 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 23 12a31.5 31.5 0 0 0-.5-4.8ZM9.8 15.5v-7L16 12l-6.2 3.5Z"/></svg>
+            YouTube
+          </a>
+        {% endif %}
+        {% if block.settings.whatsapp_url != blank %}
+          <a class="sv-social" href="{{ block.settings.whatsapp_url }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.1 4 4.1-1.1A10 10 0 1 0 12 2Zm5.6 14.3c-.2.7-1.3 1.2-1.8 1.3-.5.1-1 .2-3.4-.7-3-1.3-4.9-4.5-5-4.7-.2-.2-1.3-1.7-1.3-3.3 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.7c-.1.2-.3.4-.1.7.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.7-.1l.9-1.1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.4 0 .2 0 1.2-.5 1.8Z"/></svg>
+            WhatsApp
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-cta">
+    <div class="sv-reveal" data-sv-reveal>
+      <h2 class="sv-title">{{ block.settings.cta_title | default: 'Ready to Find Your Next Favourite Piece?' }}</h2>
+      <p class="sv-cta-text">{{ block.settings.cta_text | default: 'Explore our collection of stunning AD jewellery curated just for you.' }}</p>
+      <a class="sv-cta-btn" href="{{ block.settings.cta_link | default: '/collections/all' }}">{{ block.settings.cta_label | default: 'Shop Now' }}</a>
+    </div>
+  </section>
+</about-srivaya-{{ ai_gen_id }}>
 
 <script>
-  (function() {
-    class AboutAdhouse{{ ai_gen_id }} extends HTMLElement {
-      constructor() {
-        super();
-        this.observer = null;
-        this.statsObserver = null;
-        this.statsAnimated = false;
-      }
-
+  (function () {
+    class AboutSrivaya{{ ai_gen_id }} extends HTMLElement {
       connectedCallback() {
-        this.setupScrollAnimations();
-        this.setupStatsCounter();
+        this.setupReveal();
+        this.setupStats();
       }
 
-      setupScrollAnimations() {
-        const sections = this.querySelectorAll('.ai-about-section-{{ ai_gen_id }}');
-        
-        this.observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('ai-visible-{{ ai_gen_id }}');
-            }
+      setupReveal() {
+        var items = this.querySelectorAll('[data-sv-reveal]');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+          items.forEach(function (el) { el.classList.add('is-visible'); });
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
           });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        });
-
-        sections.forEach(section => {
-          this.observer.observe(section);
-        });
+        }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+        items.forEach(function (el) { observer.observe(el); });
       }
 
-      setupStatsCounter() {
-        const statsSection = this.querySelector('.ai-about-gold-bg-{{ ai_gen_id }}');
-        const statNumbers = this.querySelectorAll('.ai-about-stat-number-{{ ai_gen_id }}');
+      setupStats() {
+        var root = this.querySelector('[data-sv-stats]');
+        if (!root) return;
+        var numbers = root.querySelectorAll('.sv-stat-number[data-target]');
+        var done = false;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        this.statsObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !this.statsAnimated) {
-              this.statsAnimated = true;
-              this.animateStats(statNumbers);
+        var run = function () {
+          if (done) return;
+          done = true;
+          numbers.forEach(function (el) {
+            if (reduce) {
+              AboutSrivaya{{ ai_gen_id }}.setFinal(el);
+              return;
             }
+            AboutSrivaya{{ ai_gen_id }}.animate(el);
           });
-        }, {
-          threshold: 0.5
-        });
+        };
 
-        if (statsSection) {
-          this.statsObserver.observe(statsSection);
+        if (!('IntersectionObserver' in window)) {
+          run();
+          return;
         }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            run();
+            observer.disconnect();
+          });
+        }, { threshold: 0.35 });
+        observer.observe(root);
       }
 
-      animateStats(statNumbers) {
-        statNumbers.forEach(stat => {
-          const target = parseFloat(stat.getAttribute('data-target'));
-          const duration = 2000;
-          const increment = target / (duration / 16);
-          let current = 0;
-
-          const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-              if (target < 10) {
-                stat.textContent = current.toFixed(1);
-              } else {
-                stat.textContent = Math.floor(current).toLocaleString();
-              }
-              requestAnimationFrame(updateCounter);
-            } else {
-              if (target < 10) {
-                stat.textContent = target.toFixed(1);
-              } else {
-                stat.textContent = Math.floor(target).toLocaleString();
-              }
-            }
-          };
-
-          updateCounter();
-        });
+      static setFinal(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = (decimals ? target.toFixed(decimals) : Math.floor(target).toLocaleString()) + suffix;
       }
 
-      disconnectedCallback() {
-        if (this.observer) {
-          this.observer.disconnect();
+      static animate(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1600;
+        var start = null;
+
+        function frame(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = target * eased;
+          el.textContent = (decimals ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
+          if (progress < 1) requestAnimationFrame(frame);
+          else AboutSrivaya{{ ai_gen_id }}.setFinal(el);
         }
-        if (this.statsObserver) {
-          this.statsObserver.disconnect();
-        }
+        requestAnimationFrame(frame);
       }
     }
 
-    customElements.define('about-adhouse-{{ ai_gen_id }}', AboutAdhouse{{ ai_gen_id }});
+    if (!customElements.get('about-srivaya-{{ ai_gen_id }}')) {
+      customElements.define('about-srivaya-{{ ai_gen_id }}', AboutSrivaya{{ ai_gen_id }});
+    }
   })();
 </script>
 
 {% schema %}
 {
-  "name": "About AdHouse",
+  "name": "About Us",
   "settings": [
-    {
-      "type": "header",
-      "content": "Block information"
-    },
-    {
-      "type": "paragraph",
-      "content": "Premium About Us section for AdHouse.in with 9 sections: Hero, Story, AD Jewellery info, Why Choose Us, Mission, Founder Note, Stats, Social Connect, and CTA. Features scroll animations and animated counters."
-    }
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "About Us" },
+    { "type": "text", "id": "hero_title", "label": "Headline", "default": "Crafted with Love, Worn with Pride." },
+    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "At Srivaya, we believe every woman deserves to shine — every single day." },
+
+    { "type": "header", "content": "Our Story" },
+    { "type": "text", "id": "story_title", "label": "Title", "default": "Our Story" },
+    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>It all started with a simple question — why should stunning jewellery always come with a stunning price tag? Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p><p>We saw a gap in the market where quality AD Jewellery was either too expensive or too hard to find online. So we decided to change that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p><p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>" },
+
+    { "type": "header", "content": "AD Jewellery" },
+    { "type": "text", "id": "ad_title", "label": "Title", "default": "What is AD Jewellery?" },
+    { "type": "textarea", "id": "ad_intro", "label": "Intro", "default": "AD stands for American Diamond — a premium quality cubic zirconia stone that mirrors the brilliance and sparkle of a real diamond, at a fraction of the cost." },
+    { "type": "text", "id": "pill_1", "label": "Pill 1", "default": "Brilliant & Eye-Catching" },
+    { "type": "text", "id": "pill_2", "label": "Pill 2", "default": "Durable for Everyday Wear" },
+    { "type": "text", "id": "pill_3", "label": "Pill 3", "default": "Affordable Elegance" },
+    { "type": "text", "id": "pill_4", "label": "Pill 4", "default": "Perfect for Every Occasion" },
+
+    { "type": "header", "content": "Why Choose Us" },
+    { "type": "text", "id": "why_title", "label": "Title", "default": "Why Choose Srivaya?" },
+    { "type": "text", "id": "why_1_title", "label": "Card 1 title", "default": "Premium Quality" },
+    { "type": "text", "id": "why_1_text", "label": "Card 1 text", "default": "Every piece is carefully quality-checked before it reaches you." },
+    { "type": "text", "id": "why_2_title", "label": "Card 2 title", "default": "Pan India Delivery" },
+    { "type": "text", "id": "why_2_text", "label": "Card 2 text", "default": "We deliver to every corner of India, quickly and safely." },
+    { "type": "text", "id": "why_3_title", "label": "Card 3 title", "default": "Packed with Love" },
+    { "type": "text", "id": "why_3_text", "label": "Card 3 text", "default": "Your order arrives beautifully packaged, gift-ready." },
+    { "type": "text", "id": "why_4_title", "label": "Card 4 title", "default": "Easy Returns" },
+    { "type": "text", "id": "why_4_text", "label": "Card 4 text", "default": "Hassle-free return & exchange policy — no questions asked." },
+    { "type": "text", "id": "why_5_title", "label": "Card 5 title", "default": "Affordable Luxury" },
+    { "type": "text", "id": "why_5_text", "label": "Card 5 text", "default": "Designer looks without the designer price tag." },
+    { "type": "text", "id": "why_6_title", "label": "Card 6 title", "default": "Trusted Brand" },
+    { "type": "text", "id": "why_6_text", "label": "Card 6 text", "default": "10,000+ happy customers and counting." },
+
+    { "type": "header", "content": "Mission" },
+    { "type": "text", "id": "mission_title", "label": "Title", "default": "Our Mission" },
+    { "type": "textarea", "id": "mission_quote", "label": "Quote", "default": "To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life." },
+    { "type": "textarea", "id": "mission_body", "label": "Body", "default": "We don't just sell jewellery. We help you create memories — at your best friend's wedding, your first office party, your daughter's first birthday, or just a regular Tuesday when you want to feel a little extra special." },
+
+    { "type": "header", "content": "Founder note" },
+    { "type": "text", "id": "founder_title", "label": "Title", "default": "A Note from Our Founder" },
+    { "type": "textarea", "id": "founder_quote", "label": "Quote", "default": "When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery. I wanted it to be affordable enough that you don't think twice, and beautiful enough that you never forget it. Every design on this website has been personally curated with that feeling in mind. Thank you for being a part of our journey — you are the reason Srivaya exists." },
+    { "type": "text", "id": "founder_attr", "label": "Attribution", "default": "— Founder, Srivaya" },
+
+    { "type": "header", "content": "Stats" },
+    { "type": "text", "id": "stats_title", "label": "Title", "default": "Our Journey So Far" },
+    { "type": "number", "id": "stat_1_value", "label": "Stat 1 value", "default": 10000 },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Orders Delivered" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "4.8" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Star Average Rating" },
+    { "type": "number", "id": "stat_3_value", "label": "Stat 3 value", "default": 500 },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Unique Designs" },
+    { "type": "text", "id": "stat_4_value", "label": "Stat 4 value (text)", "default": "Pan India" },
+    { "type": "text", "id": "stat_4_label", "label": "Stat 4 label", "default": "Shipping Coverage" },
+
+    { "type": "header", "content": "Social" },
+    { "type": "text", "id": "social_title", "label": "Title", "default": "Stay Connected with Us" },
+    { "type": "textarea", "id": "social_text", "label": "Text", "default": "We love seeing you shine. Tag us in your photos and be part of the Srivaya family." },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+    { "type": "url", "id": "youtube_url", "label": "YouTube URL" },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp URL" },
+
+    { "type": "header", "content": "Closing CTA" },
+    { "type": "text", "id": "cta_title", "label": "Title", "default": "Ready to Find Your Next Favourite Piece?" },
+    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Explore our collection of stunning AD jewellery curated just for you." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop Now" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#6F4B53" },
+    { "type": "color", "id": "cta_button_text", "label": "Button text", "default": "#FFFFFF" },
+    { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#513C40" }
   ],
   "presets": [
-    {
-      "name": "About AdHouse"
-    }
+    { "name": "About Us" }
   ]
 }
 {% endschema %}
