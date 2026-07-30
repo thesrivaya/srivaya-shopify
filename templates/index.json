@@ -84,7 +84,7 @@
             "heading_font_size_mobile": 32,
             "heading_font_weight": "400",
             "heading_letter_spacing": -1,
-            "heading_line_height": 1.12,
+            "heading_line_height": 1.1,
             "heading_text_transform": "none",
             "eyebrow_font_size_desktop": 14,
             "eyebrow_font_size_mobile": 12,
@@ -94,7 +94,7 @@
             "subtext_font_size_desktop": 16,
             "subtext_font_size_mobile": 14,
             "subtext_font_weight": "400",
-            "heading_color": "#1F1A14",
+            "heading_color": "#1f1a14",
             "eyebrow_color": "#a27780",
             "subtext_color": "#6f4b53",
             "underline_color": "#a27780",
@@ -174,10 +174,10 @@
     "featured_collection_3QH7cy": {
       "type": "featured-collection",
       "custom_css": [
-        ".title.inline-richtext {text-align: center; font-family: var(--font-heading-family, Georgia, \"Times New Roman\", serif) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #1F1A14 !important;}",
-        "@media screen and (min-width: 750px) { .title.inline-richtext { font-size: 40px !important; } }",
-        ".title-wrapper { margin-bottom: 2.4rem !important; }",
-        "@media screen and (min-width: 750px) { .title-wrapper { margin-bottom: 3.6rem !important; } }"
+        ".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #1f1a14 !important;}",
+        "@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",
+        ".title-wrapper {margin-bottom: 2.4rem !important;}",
+        "@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"
       ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
@@ -283,9 +283,9 @@
         "badge_line_1": "Real Shoot",
         "badge_line_2": "No AI",
         "badge_line_3": "No Filters",
-        "badge_bg": "#FBF8F4",
-        "badge_border": "#D4C4B0",
-        "badge_text": "#2A241C",
+        "badge_bg": "#fbf8f4",
+        "badge_border": "#d4c4b0",
+        "badge_text": "#2a241c",
         "badge_position": "bottom-right",
         "badge_size": "medium",
         "image_position": "right",
@@ -297,15 +297,15 @@
         "padding_bottom_desktop": 80,
         "padding_top_mobile": 56,
         "padding_bottom_mobile": 56,
-        "color_background": "#F4F0EA",
-        "color_heading": "#1F1A14",
-        "color_description": "#6B6258",
-        "color_label": "#9A7B4F",
-        "color_accent": "#B8956C",
-        "color_blush": "#EDE6DE",
-        "color_icon_bg": "#F4F0EA",
-        "color_icon": "#9A7B4F",
-        "color_benefit": "#2A241C",
+        "color_background": "#f4f0ea",
+        "color_heading": "#1f1a14",
+        "color_description": "#6b6258",
+        "color_label": "#9a7b4f",
+        "color_accent": "#b8956c",
+        "color_blush": "#ede6de",
+        "color_icon_bg": "#f4f0ea",
+        "color_icon": "#9a7b4f",
+        "color_benefit": "#2a241c",
         "border_radius": 2,
         "shadow_strength": "soft",
         "heading_size_desktop": 40,
@@ -434,15 +434,15 @@
         "enable_hover": true,
         "use_default_pattern": true,
         "pattern_size": 180,
-        "color_background": "#FAF8F1",
-        "color_surface": "#FFFFFF",
-        "color_heading": "#1F1A14",
-        "color_text": "#5C5660",
+        "color_background": "#faf8f1",
+        "color_surface": "#ffffff",
+        "color_heading": "#1f1a14",
+        "color_text": "#5c5660",
         "color_accent": "#951528",
         "color_highlight_bg": "#951528",
-        "color_highlight_text": "#FFFFFF",
-        "color_icon": "#8A6A4A",
-        "color_icon_bg": "#FBF8F4",
+        "color_highlight_text": "#ffffff",
+        "color_icon": "#8a6a4a",
+        "color_icon_bg": "#fbf8f4",
         "color_label": "#202336",
         "heading_size_desktop": 40,
         "heading_size_mobile": 32,
@@ -544,14 +544,14 @@
         "padding_bottom_desktop": 80,
         "padding_top_mobile": 56,
         "padding_bottom_mobile": 56,
-        "color_background": "#F4F0EA",
-        "color_surface": "#EDE6DE",
-        "color_border": "#D5CBBE",
-        "color_label": "#9A7B4F",
-        "color_heading": "#1F1A14",
-        "color_stat": "#1F1A14",
-        "color_text": "#6B6258",
-        "color_accent": "#B8956C",
+        "color_background": "#f4f0ea",
+        "color_surface": "#ede6de",
+        "color_border": "#d5cbbe",
+        "color_label": "#9a7b4f",
+        "color_heading": "#1f1a14",
+        "color_stat": "#1f1a14",
+        "color_text": "#6b6258",
+        "color_accent": "#b8956c",
         "heading_size_desktop": 40,
         "heading_size_mobile": 32,
         "heading_weight": "400",
@@ -566,10 +566,10 @@
     "featured_collection_aBabXt": {
       "type": "featured-collection",
       "custom_css": [
-        ".title.inline-richtext {text-align: center; font-family: var(--font-heading-family, Georgia, \"Times New Roman\", serif) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #1F1A14 !important;}",
-        "@media screen and (min-width: 750px) { .title.inline-richtext { font-size: 40px !important; } }",
-        ".title-wrapper { margin-bottom: 2.4rem !important; }",
-        "@media screen and (min-width: 750px) { .title-wrapper { margin-bottom: 3.6rem !important; } }"
+        ".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #1f1a14 !important;}",
+        "@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",
+        ".title-wrapper {margin-bottom: 2.4rem !important;}",
+        "@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"
       ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
@@ -695,7 +695,7 @@
         "background_color": "#faf8f5",
         "card_background": "#ffffff",
         "card_border_color": "#ede6dc",
-        "title_color": "#1F1A14",
+        "title_color": "#1f1a14",
         "subtitle_color": "#78716c",
         "text_color": "#1c1917",
         "muted_color": "#8a837b",
@@ -787,7 +787,7 @@
         "heading": "Loved by our customers",
         "description": "Real stories from people who chose pieces they love to wear every day.",
         "background_color": "#ffffff",
-        "heading_color": "#1F1A14",
+        "heading_color": "#1f1a14",
         "description_color": "#78716c",
         "pill_background": "#fffcf8",
         "pill_border": "#ede6dc",
@@ -805,6 +805,94 @@
         "mobile_speed": 70,
         "pause_on_hover": true
       }
+    },
+    "brand_promise_ipNWDk": {
+      "type": "brand-promise",
+      "blocks": {
+        "icon_zEV6QM": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "title": "Clean Compatible"
+          }
+        },
+        "icon_YzhxbK": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "title": "Thoughtfully formulated"
+          }
+        },
+        "icon_39MhT9": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "title": "Quality craftsmanship"
+          }
+        },
+        "icon_MfCpgW": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "title": "Made with care"
+          }
+        }
+      },
+      "block_order": [
+        "icon_zEV6QM",
+        "icon_YzhxbK",
+        "icon_39MhT9",
+        "icon_MfCpgW"
+      ],
+      "name": "Brand Promise",
+      "settings": {
+        "label": "Clean Compatible",
+        "heading": "Our Promise",
+        "text": "<p>Not just <strong>free of harmful and toxic chemicals</strong>, but made with ingredients that enhance the beauty of every piece and support lasting quality and craftsmanship.</p>",
+        "copy_alignment": "center",
+        "show_promise_icon": true,
+        "promise_icon": "seal",
+        "promise_icon_size": 64,
+        "media_mode": "auto",
+        "image_alt": "Our brand promise",
+        "image_aspect": "portrait",
+        "image_fit": "cover",
+        "media_radius": 16,
+        "hover_zoom": true,
+        "enable_media_depth": true,
+        "shadow_strength": "medium",
+        "icon_size": 88,
+        "icon_gap": 28,
+        "icons_per_row_desktop": "2",
+        "icons_per_row_mobile": "2",
+        "icon_shape": "rounded",
+        "icon_radius": 12,
+        "media_position": "left",
+        "full_width": false,
+        "container_width": 1200,
+        "column_gap": 48,
+        "media_max_width": 560,
+        "copy_max_width": 480,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "color_background": "#F7F2EC",
+        "color_surface": "#EFE7DD",
+        "color_heading": "#1F1A14",
+        "color_text": "#4A433C",
+        "color_label": "#9A7B4F",
+        "color_accent": "#B8956C",
+        "color_icon_title": "#2A241C",
+        "color_icon_bg": "#FBF8F4",
+        "color_promise_icon": "#8A6A4A",
+        "heading_size_desktop": 32,
+        "heading_size_mobile": 26,
+        "heading_weight": "600",
+        "text_size": 15,
+        "label_size": 12,
+        "icon_title_size": 14
+      }
     }
   },
   "order": [
@@ -816,6 +904,7 @@
     "store_metrics_Azz743",
     "featured_collection_aBabXt",
     "creator_reviews_marquee_LP6jgD",
-    "customer_reviews_marquee_9Q6UDy"
+    "customer_reviews_marquee_9Q6UDy",
+    "brand_promise_ipNWDk"
   ]
 }
