@@ -33,8 +33,8 @@
     --crm-avatar-text: {{ section.settings.avatar_text_color }};
     --crm-gold: {{ section.settings.gold_accent }};
     --crm-radius: {{ border_radius }}px;
-    --crm-gap: 1.25rem;
-    --crm-row-gap: 1.25rem;
+    --crm-gap: 1.6rem;
+    --crm-row-gap: 1.6rem;
     --crm-speed: {{ desktop_speed }}s;
     --crm-speed-2: calc({{ desktop_speed }}s * 1.18);
     --crm-pad-top: {{ section.settings.padding_top }}px;
@@ -61,28 +61,34 @@
 
   #crm-{{ sid }} .crm__header {
     text-align: center;
-    max-width: 42rem;
-    margin: 0 auto 2.5rem;
-    padding: 0 1.5rem;
+    max-width: 68rem;
+    margin: 0 auto 3.2rem;
+    padding: 0 2rem;
   }
 
   #crm-{{ sid }} .crm__heading {
     margin: 0;
     color: var(--crm-heading);
-    font-size: clamp(1.5rem, 2.5vw + 0.75rem, 2.25rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(
+      calc(var(--font-heading-scale) * 2.2rem),
+      2.4vw + 1.4rem,
+      calc(var(--font-heading-scale) * 3.2rem)
+    );
+    letter-spacing: calc(var(--font-heading-scale) * 0.04rem);
+    line-height: calc(1 + 0.25 / max(1, var(--font-heading-scale)));
   }
 
   #crm-{{ sid }} .crm__description {
-    margin: 0.85rem 0 0;
+    margin: 1.2rem 0 0;
     color: var(--crm-desc);
-    font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.05rem);
+    font-size: clamp(1.4rem, 0.35vw + 1.3rem, 1.6rem);
     font-weight: 400;
-    line-height: 1.65;
-    letter-spacing: 0.01em;
-    opacity: 0.92;
+    line-height: calc(1 + 0.6 / var(--font-body-scale));
+    letter-spacing: 0.02rem;
+    opacity: 0.95;
   }
 
   #crm-{{ sid }} .crm__marquees {
@@ -154,12 +160,12 @@
   #crm-{{ sid }} .crm__pill {
     display: flex;
     align-items: flex-start;
-    gap: 0.85rem;
+    gap: 1.2rem;
     flex-shrink: 0;
     width: max-content;
-    max-width: min(22rem, 85vw);
-    padding: 1rem 1.35rem 1rem 1rem;
-    background: color-mix(in srgb, var(--crm-pill-bg) 88%, transparent);
+    max-width: min(42rem, 88vw);
+    padding: 1.5rem 1.8rem 1.5rem 1.5rem;
+    background: color-mix(in srgb, var(--crm-pill-bg) 92%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--crm-pill-border);
@@ -168,6 +174,7 @@
     {% endif %}
     border-radius: var(--crm-radius);
     box-shadow: var(--crm-shadow);
+    letter-spacing: 0.02rem;
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
   }
 
@@ -185,15 +192,15 @@
     outline-offset: 3px;
   }
 
-  #crm-{{ sid }} .crm__pill--offset-1 { margin-top: 0.35rem; }
+  #crm-{{ sid }} .crm__pill--offset-1 { margin-top: 0.4rem; }
   #crm-{{ sid }} .crm__pill--offset-2 { margin-top: 0; }
-  #crm-{{ sid }} .crm__pill--offset-3 { margin-top: 0.55rem; }
-  #crm-{{ sid }} .crm__pill--offset-4 { margin-top: 0.15rem; }
+  #crm-{{ sid }} .crm__pill--offset-3 { margin-top: 0.6rem; }
+  #crm-{{ sid }} .crm__pill--offset-4 { margin-top: 0.2rem; }
 
   #crm-{{ sid }} .crm__avatar {
     flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -201,7 +208,7 @@
     justify-content: center;
     background: var(--crm-avatar-bg);
     color: var(--crm-avatar-text);
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     line-height: 1;
@@ -218,60 +225,68 @@
   #crm-{{ sid }} .crm__body {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.55rem;
     min-width: 0;
+    padding-top: 0.1rem;
   }
 
   #crm-{{ sid }} .crm__name {
     margin: 0;
     color: var(--crm-name);
-    font-size: 0.875rem;
+    font-size: 1.45rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.01rem;
     line-height: 1.3;
   }
 
   #crm-{{ sid }} .crm__text {
     margin: 0;
     color: var(--crm-text);
-    font-size: 0.8125rem;
+    font-size: 1.35rem;
     font-weight: 400;
-    line-height: 1.55;
-    letter-spacing: 0.005em;
+    line-height: 1.6;
+    letter-spacing: 0.01rem;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
   }
 
   @media screen and (min-width: 750px) {
     #crm-{{ sid }} {
       padding-top: var(--crm-pad-top);
       padding-bottom: var(--crm-pad-bottom);
-      --crm-gap: 1.5rem;
-      --crm-row-gap: 1.5rem;
+      --crm-gap: 2rem;
+      --crm-row-gap: 2rem;
     }
 
     #crm-{{ sid }} .crm__header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
     #crm-{{ sid }} .crm__pill {
-      padding: 1.15rem 1.6rem 1.15rem 1.15rem;
-      gap: 1rem;
-      max-width: 26rem;
+      padding: 1.7rem 2.2rem 1.7rem 1.7rem;
+      gap: 1.4rem;
+      max-width: 48rem;
     }
 
     #crm-{{ sid }} .crm__avatar {
-      width: 2.75rem;
-      height: 2.75rem;
-      font-size: 0.75rem;
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.2rem;
+    }
+
+    #crm-{{ sid }} .crm__body {
+      gap: 0.65rem;
     }
 
     #crm-{{ sid }} .crm__name {
-      font-size: 0.9375rem;
+      font-size: 1.5rem;
     }
 
     #crm-{{ sid }} .crm__text {
-      font-size: 0.875rem;
+      font-size: 1.4rem;
+      line-height: 1.65;
     }
 
     #crm-{{ sid }} .crm__row {
@@ -296,25 +311,47 @@
     #crm-{{ sid }} {
       --crm-speed: {{ mobile_speed }}s;
       --crm-speed-2: calc({{ mobile_speed }}s * 1.18);
-      --crm-gap: 0.85rem;
-      --crm-row-gap: 0.9rem;
+      --crm-gap: 1.2rem;
+      --crm-row-gap: 1.3rem;
     }
 
     #crm-{{ sid }} .crm__header {
-      margin-bottom: 1.75rem;
-      padding: 0 1.25rem;
+      margin-bottom: 2.4rem;
+      padding: 0 1.6rem;
+    }
+
+    #crm-{{ sid }} .crm__heading {
+      font-size: clamp(
+        calc(var(--font-heading-scale) * 2rem),
+        4.5vw + 1rem,
+        calc(var(--font-heading-scale) * 2.6rem)
+      );
+    }
+
+    #crm-{{ sid }} .crm__description {
+      margin-top: 1rem;
+      font-size: 1.4rem;
     }
 
     #crm-{{ sid }} .crm__pill {
-      padding: 0.85rem 1.1rem 0.85rem 0.85rem;
-      gap: 0.7rem;
-      max-width: min(18rem, 78vw);
+      padding: 1.3rem 1.5rem 1.3rem 1.3rem;
+      gap: 1rem;
+      max-width: min(36rem, 86vw);
     }
 
     #crm-{{ sid }} .crm__avatar {
-      width: 2.15rem;
-      height: 2.15rem;
-      font-size: 0.625rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      font-size: 1rem;
+    }
+
+    #crm-{{ sid }} .crm__name {
+      font-size: 1.4rem;
+    }
+
+    #crm-{{ sid }} .crm__text {
+      font-size: 1.3rem;
+      line-height: 1.55;
     }
   }
 
@@ -332,10 +369,10 @@
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
-      max-width: 72rem;
+      max-width: 120rem;
       margin: 0 auto;
-      padding: 0 1.25rem;
-      row-gap: 0.85rem;
+      padding: 0 1.6rem;
+      row-gap: 1.2rem;
     }
 
     #crm-{{ sid }} .crm__group:not(:first-child) {
@@ -426,7 +463,7 @@
                             | image_tag:
                               loading: 'lazy',
                               widths: '56, 112',
-                              sizes: '44px',
+                              sizes: '40px',
                               alt: avatar_alt
                           }}
                         {%- else -%}
@@ -493,7 +530,7 @@
                             | image_tag:
                               loading: 'lazy',
                               widths: '56, 112',
-                              sizes: '44px',
+                              sizes: '40px',
                               alt: avatar_alt
                           }}
                         {%- else -%}
