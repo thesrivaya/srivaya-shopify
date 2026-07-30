@@ -327,6 +327,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "bride-collection",
             "title": "A Bride",
             "icon": "bride"
           }
@@ -335,6 +336,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "bridemaids-collection",
             "title": "A Bridesmaid",
             "icon": "bridesmaid"
           }
@@ -343,6 +345,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Attending a Function",
             "icon": "guest"
           }
@@ -351,6 +354,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Going to a Party",
             "icon": "party"
           }
@@ -359,6 +363,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Celebrating Your Day",
             "icon": "festive"
           }
@@ -367,6 +372,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "birthday-collection",
             "title": "Birthday",
             "icon": "birthday"
           }
@@ -375,6 +381,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "anniversary-collection",
             "title": "Anniversary",
             "icon": "anniversary"
           }
@@ -383,6 +390,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Everyday Elegance",
             "icon": "everyday"
           }
@@ -391,6 +399,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Festive Season",
             "icon": "sparkle"
           }
@@ -399,6 +408,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
+            "collection": "",
             "title": "Wedding Guest",
             "icon": "guest"
           }
