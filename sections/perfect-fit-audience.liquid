@@ -45,31 +45,67 @@
     padding-top: var(--pfa-pad-top-m);
     padding-bottom: var(--pfa-pad-bottom-m);
     color: var(--pfa-text);
-    background-color: var(--pfa-bg);
-    {% if section.settings.pattern_image != blank %}
-      background-image: url({{ section.settings.pattern_image | image_url: width: 800 }});
-      background-position: center;
-      background-repeat: repeat;
-      background-size: {{ section.settings.pattern_size }}px;
-    {% elsif section.settings.use_default_pattern %}
-      background-image: url(https://cdn.shopify.com/s/files/1/0955/5873/0040/files/dot-bg-v2.webp?v=1755518635);
-      background-position: center;
-      background-repeat: repeat;
-    {% endif %}
+    background-color: #ffffff;
     overflow: clip;
   }
 
+  /* Bottom-only soft brand fade — seamless, no hard edge */
   #pfa-{{ sid }}::before {
     content: '';
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: min(48%, 22rem);
     z-index: 0;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse 55% 45% at 12% 18%, color-mix(in srgb, var(--pfa-accent) 14%, transparent), transparent 70%),
-      radial-gradient(ellipse 50% 40% at 88% 78%, color-mix(in srgb, var(--pfa-icon) 12%, transparent), transparent 72%),
-      linear-gradient(180deg, color-mix(in srgb, #fff 35%, transparent) 0%, transparent 28%, transparent 72%, color-mix(in srgb, var(--pfa-bg) 70%, transparent) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, #f6f1f2 18%, transparent) 42%,
+      color-mix(in srgb, #f6f1f2 42%, transparent) 72%,
+      color-mix(in srgb, #ece4e6 28%, transparent) 100%
+    );
   }
+
+  #pfa-{{ sid }}::after {
+    content: none;
+  }
+
+  {% if section.settings.pattern_image != blank %}
+    #pfa-{{ sid }} .pfa__bottom-pattern {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: min(38%, 16rem);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      background-image: url({{ section.settings.pattern_image | image_url: width: 800 }});
+      background-position: center bottom;
+      background-repeat: repeat;
+      background-size: {{ section.settings.pattern_size }}px;
+    }
+  {% elsif section.settings.use_default_pattern %}
+    #pfa-{{ sid }} .pfa__bottom-pattern {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: min(38%, 16rem);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.1;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      background-image: url(https://cdn.shopify.com/s/files/1/0955/5873/0040/files/dot-bg-v2.webp?v=1755518635);
+      background-position: center bottom;
+      background-repeat: repeat;
+    }
+  {% endif %}
 
   #pfa-{{ sid }} .pfa__inner {
     position: relative;
@@ -86,34 +122,6 @@
     max-width: {{ section.settings.heading_max_width }}px;
     margin: 0 auto {% if section.settings.subtext != blank %}1rem{% else %}3.6rem{% endif %};
     text-align: {{ section.settings.heading_alignment }};
-  }
-
-  #pfa-{{ sid }} .pfa__ornament {
-    display: flex;
-    align-items: center;
-    justify-content: {% if section.settings.heading_alignment == 'left' %}flex-start{% elsif section.settings.heading_alignment == 'right' %}flex-end{% else %}center{% endif %};
-    gap: 0.65rem;
-    margin: 0 0 0.95rem;
-    color: color-mix(in srgb, var(--pfa-accent) 70%, var(--pfa-icon));
-  }
-
-  #pfa-{{ sid }} .pfa__ornament-line {
-    width: 2.25rem;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--pfa-accent) 55%, transparent),
-      transparent
-    );
-  }
-
-  #pfa-{{ sid }} .pfa__ornament-diamond {
-    width: 0.45rem;
-    height: 0.45rem;
-    rotate: 45deg;
-    background: var(--pfa-accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pfa-accent) 14%, transparent);
   }
 
   #pfa-{{ sid }} .pfa__heading {
@@ -396,14 +404,12 @@
     aria-label="Perfect fit for you"
   {% endif %}
 >
+  {%- if section.settings.pattern_image != blank or section.settings.use_default_pattern -%}
+    <div class="pfa__bottom-pattern" aria-hidden="true"></div>
+  {%- endif -%}
   <div class="pfa__inner">
     {%- if section.settings.heading != blank or section.settings.highlight_text != blank -%}
       <div class="pfa__header pfa-anim" data-pfa-anim>
-        <div class="pfa__ornament" aria-hidden="true">
-          <span class="pfa__ornament-line"></span>
-          <span class="pfa__ornament-diamond"></span>
-          <span class="pfa__ornament-line"></span>
-        </div>
         <h2 id="pfa-heading-{{ sid }}" class="pfa__heading">
           {%- if section.settings.heading != blank -%}
             {{ section.settings.heading | escape }}
@@ -668,14 +674,15 @@
     {
       "type": "checkbox",
       "id": "use_default_pattern",
-      "label": "Use dotted pattern",
-      "default": true
+      "label": "Use dotted pattern overlay",
+      "info": "Optional. Animated ambiance is always on; this adds a subtle pattern on top.",
+      "default": false
     },
     {
       "type": "image_picker",
       "id": "pattern_image",
       "label": "Custom pattern image",
-      "info": "Overrides the default dotted pattern when set."
+      "info": "Optional overlay. Overrides the default dotted pattern when set."
     },
     {
       "type": "range",
@@ -695,7 +702,7 @@
       "type": "color",
       "id": "color_background",
       "label": "Background",
-      "default": "#FAF8F1"
+      "default": "#FFFFFF"
     },
     {
       "type": "color",
@@ -719,13 +726,13 @@
       "type": "color",
       "id": "color_accent",
       "label": "Accent (glow)",
-      "default": "#951528"
+      "default": "#6F4B53"
     },
     {
       "type": "color",
       "id": "color_highlight_bg",
       "label": "Highlight background",
-      "default": "#951528"
+      "default": "#6F4B53"
     },
     {
       "type": "color",

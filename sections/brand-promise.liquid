@@ -57,20 +57,16 @@
     --bpp-shadow:
       {% case section.settings.shadow_strength %}
         {% when 'none' %}none
-        {% when 'soft' %}0 8px 28px rgba(28, 22, 16, 0.06)
-        {% when 'medium' %}0 16px 40px rgba(28, 22, 16, 0.1)
-        {% when 'strong' %}0 24px 56px rgba(28, 22, 16, 0.14)
+        {% when 'soft' %}0 8px 28px rgba(49, 36, 38, 0.04)
+        {% when 'medium' %}0 12px 32px rgba(49, 36, 38, 0.06)
+        {% when 'strong' %}0 18px 44px rgba(49, 36, 38, 0.09)
       {% endcase %};
   }
 
   #bpp-{{ sid }} {
-    background:
-      linear-gradient(
-        165deg,
-        color-mix(in srgb, var(--bpp-accent) 8%, var(--bpp-bg)) 0%,
-        var(--bpp-bg) 45%,
-        color-mix(in srgb, var(--bpp-surface) 50%, var(--bpp-bg)) 100%
-      );
+    position: relative;
+    isolation: isolate;
+    background-color: #ffffff;
     padding-top: var(--bpp-pad-top-m);
     padding-bottom: var(--bpp-pad-bottom-m);
     color: var(--bpp-text);
@@ -78,7 +74,31 @@
     overflow-y: visible;
   }
 
+  /* Soft brand wash — no hard section border */
+  #bpp-{{ sid }}::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, #f6f1f2 35%, transparent) 0%,
+        transparent 28%,
+        transparent 58%,
+        color-mix(in srgb, #f6f1f2 28%, transparent) 100%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 50% 100%,
+        color-mix(in srgb, #ece4e6 40%, transparent),
+        transparent 70%
+      );
+  }
+
   #bpp-{{ sid }} .bpp__inner {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: var(--bpp-container);
     margin: 0 auto;
@@ -129,8 +149,8 @@
     font-style: var(--font-heading-style, normal);
     font-weight: {{ section.settings.heading_weight }};
     font-size: var(--bpp-heading-size-m);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
     color: var(--bpp-heading);
     text-wrap: balance;
   }
@@ -169,7 +189,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: {{ section.settings.color_promise_icon | default: '#8A6A4A' }};
+    color: {{ section.settings.color_promise_icon | default: '#6F4B53' }};
   }
 
   #bpp-{{ sid }} .bpp__promise-mark-inner svg,
@@ -981,7 +1001,7 @@
       "type": "color",
       "id": "color_background",
       "label": "Background",
-      "default": "#F7F2EC"
+      "default": "#FFFFFF"
     },
     {
       "type": "color",
@@ -1011,7 +1031,7 @@
       "type": "color",
       "id": "color_accent",
       "label": "Accent",
-      "default": "#B8956C"
+      "default": "#A27780"
     },
     {
       "type": "color",
