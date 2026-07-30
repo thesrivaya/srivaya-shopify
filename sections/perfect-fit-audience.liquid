@@ -84,7 +84,7 @@
 
   #pfa-{{ sid }} .pfa__header {
     max-width: {{ section.settings.heading_max_width }}px;
-    margin: 0 auto {% if section.settings.subtext != blank %}0.85rem{% else %}1.75rem{% endif %};
+    margin: 0 auto {% if section.settings.subtext != blank %}1rem{% else %}3.6rem{% endif %};
     text-align: {{ section.settings.heading_alignment }};
   }
 
@@ -122,7 +122,7 @@
     font-style: var(--font-heading-style, normal);
     font-weight: {{ section.settings.heading_weight }};
     font-size: var(--pfa-heading-size-m);
-    line-height: 1.28;
+    line-height: 1.12;
     letter-spacing: -0.025em;
     color: var(--pfa-heading);
     text-wrap: balance;
@@ -374,11 +374,11 @@
     }
 
     #pfa-{{ sid }} .pfa__header {
-      margin-bottom: {% if section.settings.subtext != blank %}1rem{% else %}2.4rem{% endif %};
+      margin-bottom: {% if section.settings.subtext != blank %}1.2rem{% else %}3.6rem{% endif %};
     }
 
     #pfa-{{ sid }} .pfa__subtext {
-      margin-bottom: 2.4rem;
+      margin-bottom: 3.6rem;
     }
 
     #pfa-{{ sid }} .pfa__item {
