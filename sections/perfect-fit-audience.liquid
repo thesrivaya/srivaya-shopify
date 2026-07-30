@@ -454,10 +454,8 @@
           {%- if pfa_title == blank and pfa_collection != blank -%}
             {%- assign pfa_title = pfa_collection.title -%}
           {%- endif -%}
+          {%- comment -%} Use only Perfect Fit custom image or built-in icon — never collection image {%- endcomment -%}
           {%- assign pfa_image = block.settings.image -%}
-          {%- if pfa_image == blank and pfa_collection != blank -%}
-            {%- assign pfa_image = pfa_collection.featured_image | default: pfa_collection.image -%}
-          {%- endif -%}
           {%- assign pfa_url = blank -%}
           {%- if pfa_collection != blank -%}
             {%- assign pfa_url = pfa_collection.url -%}
@@ -481,7 +479,7 @@
               {%- endif -%}
                   <div class="pfa__icon{% if section.settings.icon_style == 'framed' %} pfa__icon--framed{% endif %}{% if pfa_image != blank %} pfa__icon--photo{% endif %}">
                     {%- if pfa_image != blank -%}
-                      {%- assign icon_alt = pfa_title | default: pfa_collection.title | default: 'Collection' -%}
+                      {%- assign icon_alt = pfa_title | default: 'Collection' -%}
                       {{
                         pfa_image
                         | image_url: width: 300
@@ -949,25 +947,19 @@
           "type": "collection",
           "id": "collection",
           "label": "Collection",
-          "info": "Card links to this collection. Title and image fall back to the collection when custom fields are empty."
+          "info": "Card links to this collection. Leave title blank to use the collection name."
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Custom title",
+          "label": "Title",
           "info": "Optional. Leave blank to use the collection title."
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Custom image",
-          "info": "Optional. Leave blank to use the collection image."
         },
         {
           "type": "select",
           "id": "icon",
-          "label": "Fallback icon",
-          "info": "Used when no custom image or collection image is available.",
+          "label": "Icon",
+          "info": "Shown when no custom image is set.",
           "options": [
             { "value": "bride", "label": "Bride" },
             { "value": "bridesmaid", "label": "Bridesmaid" },
@@ -980,6 +972,12 @@
             { "value": "sparkle", "label": "Sparkle" }
           ],
           "default": "bride"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom image",
+          "info": "Optional. Replaces the icon when set. Collection images are never used."
         }
       ]
     }
