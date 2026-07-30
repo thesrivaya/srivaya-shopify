@@ -48,11 +48,13 @@
   }
 
   .ai-contact-hero-title-{{ ai_gen_id }} {
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
     font-size: {{ block.settings.hero_title_size }}px;
     color: {{ block.settings.hero_title_color }};
     margin: 0 0 16px;
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
   }
 
   .ai-contact-hero-subtitle-{{ ai_gen_id }} {
@@ -79,13 +81,13 @@
     border-radius: {{ block.settings.card_border_radius }}px;
     padding: 32px 24px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(131, 84, 71, 0.08);
+    box-shadow: 0 4px 12px rgba(49, 36, 38, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .ai-contact-card-{{ ai_gen_id }}:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(131, 84, 71, 0.12);
+    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.08);
   }
 
   .ai-contact-card-icon-{{ ai_gen_id }} {
@@ -161,15 +163,17 @@
     background: {{ block.settings.form_background }};
     border-radius: {{ block.settings.form_border_radius }}px;
     padding: 40px;
-    box-shadow: 0 4px 16px rgba(131, 84, 71, 0.1);
+    box-shadow: 0 4px 16px rgba(49, 36, 38, 0.06);
   }
 
   .ai-contact-form-title-{{ ai_gen_id }} {
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 400;
     color: {{ block.settings.form_title_color }};
     margin: 0 0 24px;
     text-align: center;
+    letter-spacing: -0.02em;
   }
 
   .ai-contact-form-field-{{ ai_gen_id }} {
@@ -447,13 +451,13 @@
       "type": "color",
       "id": "hero_title_color",
       "label": "Title color",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
       "id": "hero_subtitle_color",
       "label": "Subtitle color",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "header",
@@ -657,7 +661,7 @@
       "type": "color",
       "id": "background_gradient_color",
       "label": "Background end",
-      "default": "#f7f7f7"
+      "default": "#f6f1f2"
     },
     {
       "type": "color",
@@ -669,31 +673,31 @@
       "type": "color",
       "id": "card_title_color",
       "label": "Card title",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
       "id": "card_text_color",
       "label": "Card text",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "color",
       "id": "link_color",
       "label": "Link color",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "color",
       "id": "social_title_color",
       "label": "Social title",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
       "id": "social_icon_background",
       "label": "Social icon background",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "color",
@@ -705,7 +709,7 @@
       "type": "color",
       "id": "social_icon_hover_background",
       "label": "Social icon hover",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "color",
@@ -717,19 +721,19 @@
       "type": "color",
       "id": "form_title_color",
       "label": "Form title",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
       "id": "form_label_color",
       "label": "Form label",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
       "id": "form_input_text",
       "label": "Input text",
-      "default": "#312426"
+      "default": "#20181a"
     },
     {
       "type": "color",
@@ -741,19 +745,19 @@
       "type": "color",
       "id": "form_input_border",
       "label": "Input border",
-      "default": "#e0d5d1"
+      "default": "#e3d6d9"
     },
     {
       "type": "color",
       "id": "form_input_focus_border",
       "label": "Input focus border",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "color",
       "id": "form_button_background",
       "label": "Button background",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "color",
@@ -765,13 +769,13 @@
       "type": "color",
       "id": "form_button_hover_background",
       "label": "Button hover",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "color",
       "id": "trust_text_color",
       "label": "Trust message",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "header",

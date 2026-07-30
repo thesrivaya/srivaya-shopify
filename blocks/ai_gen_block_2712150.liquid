@@ -4,13 +4,13 @@
     
     Include the following sections:
     
-    1. Hero/Welcome Section: A welcoming headline "We'd Love to Hear From You ✨" with subtext "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you." Use a soft warm background aligned with brand color #a46959.
+    1. Hero/Welcome Section: A welcoming headline "We'd Love to Hear From You ✨" with subtext "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you." Use a soft warm background aligned with brand color #6f4b53.
     
     2. Contact Details Section: Display contact info in a clean card grid layout with icons: Phone +91-XXXXXXXXXX, WhatsApp tap to chat instantly via wa.me, Email support@adhouse.in, Business Hours Monday to Saturday 10AM to 7PM IST, Address placeholder.
     
     3. Social Media Links Section: Heading "Follow Us & Stay Inspired 💎" with clickable icon links for Instagram, Facebook, Pinterest, and YouTube. Elegant icon styling for luxury jewellery brand.
     
-    Design: warm earthy tones, brand color #a46959 for accents, clean minimal layout, generous whitespace, Jakarta Sans typography, fully responsive mobile-first, all fields customizable via theme editor schema.
+    Design: warm earthy tones, brand color #6f4b53 for accents, clean minimal layout, generous whitespace, Jakarta Sans typography, fully responsive mobile-first, all fields customizable via theme editor schema.
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
@@ -33,11 +33,13 @@
   }
 
   .ai-contact-hero-title-{{ ai_gen_id }} {
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
     font-size: {{ block.settings.hero_title_size_mobile }}px;
     color: {{ block.settings.hero_text_color }};
     margin: 0 0 16px;
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
   }
 
   .ai-contact-hero-subtext-{{ ai_gen_id }} {
@@ -75,7 +77,7 @@
 
   .ai-contact-card-{{ ai_gen_id }}:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(164, 105, 89, 0.15);
+    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.08);
   }
 
   .ai-contact-card-icon-{{ ai_gen_id }} {
@@ -386,13 +388,13 @@
       "type": "color",
       "id": "hero_bg_color",
       "label": "Background color",
-      "default": "#f7ede8"
+      "default": "#f6f1f2"
     },
     {
       "type": "color",
       "id": "hero_text_color",
       "label": "Text color",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "range",
@@ -498,7 +500,7 @@
       "type": "color",
       "id": "card_border_color",
       "label": "Border color",
-      "default": "#e8ddd8"
+      "default": "#e3d6d9"
     },
     {
       "type": "range",
@@ -524,7 +526,7 @@
       "type": "color",
       "id": "card_title_color",
       "label": "Title color",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "color",
@@ -536,7 +538,7 @@
       "type": "color",
       "id": "card_link_color",
       "label": "Link color",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "range",
@@ -552,13 +554,13 @@
       "type": "color",
       "id": "icon_bg_color",
       "label": "Icon background",
-      "default": "#f7ede8"
+      "default": "#f6f1f2"
     },
     {
       "type": "color",
       "id": "icon_color",
       "label": "Icon color",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "header",
@@ -686,13 +688,13 @@
       "type": "color",
       "id": "social_bg_color",
       "label": "Background color",
-      "default": "#f7f7f7"
+      "default": "#f6f1f2"
     },
     {
       "type": "color",
       "id": "social_text_color",
       "label": "Text color",
-      "default": "#835447"
+      "default": "#61474d"
     },
     {
       "type": "range",
@@ -754,13 +756,13 @@
       "type": "color",
       "id": "social_icon_color",
       "label": "Icon color",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "color",
       "id": "social_icon_hover_bg",
       "label": "Icon hover background",
-      "default": "#a46959"
+      "default": "#6f4b53"
     },
     {
       "type": "url",

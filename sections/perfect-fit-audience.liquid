@@ -1,6 +1,6 @@
 {%- comment -%}
   Perfect Fit Audience
-  Occasion-based audience targeting: bride, bridesmaid, parties, birthday, and more.
+  Collection cards for occasion-based shopping — each block links to a Shopify collection.
 {%- endcomment -%}
 
 {%- liquid
@@ -177,7 +177,8 @@
     align-items: stretch;
   }
 
-  #pfa-{{ sid }} .pfa__item {
+  #pfa-{{ sid }} .pfa__item,
+  #pfa-{{ sid }} a.pfa__item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -191,11 +192,18 @@
     background: var(--pfa-surface);
     border: 1px solid color-mix(in srgb, var(--pfa-heading) 8%, transparent);
     box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
     transition:
       transform 0.45s var(--pfa-ease),
       border-color 0.45s var(--pfa-ease),
       background-color 0.45s var(--pfa-ease),
       box-shadow 0.45s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }} .pfa__item--static {
+    cursor: default;
   }
 
   #pfa-{{ sid }} .pfa__item::after {
@@ -240,6 +248,11 @@
     }
   {% endif %}
 
+  #pfa-{{ sid }} a.pfa__item:focus-visible {
+    outline: 2px solid var(--pfa-accent);
+    outline-offset: 3px;
+  }
+
   #pfa-{{ sid }} .pfa__icon {
     position: relative;
     z-index: 1;
@@ -270,14 +283,24 @@
     object-fit: contain;
   }
 
+  #pfa-{{ sid }} .pfa__icon--photo {
+    overflow: hidden;
+  }
+
+  #pfa-{{ sid }} .pfa__icon--photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   {% if section.settings.icon_style == 'plain' %}
-    #pfa-{{ sid }} .pfa__icon {
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) {
       background: transparent;
       box-shadow: none;
     }
 
-    #pfa-{{ sid }} .pfa__icon svg,
-    #pfa-{{ sid }} .pfa__icon img {
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) svg,
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) img {
       width: 78%;
       height: 78%;
     }
@@ -312,17 +335,14 @@
     transform: none;
   }
 
-  #pfa-{{ sid }} .pfa__item.pfa-anim {
+  #pfa-{{ sid }} li.pfa-anim {
     transition-delay: calc(var(--pfa-stagger, 0) * 45ms);
+    height: 100%;
   }
 
-  {% if section.settings.enable_hover %}
-    @media (hover: hover) {
-      #pfa-{{ sid }} .pfa__item.pfa-anim.is-visible:hover {
-        transform: translateY(-3px);
-      }
-    }
-  {% endif %}
+  #pfa-{{ sid }} li.pfa-anim .pfa__item {
+    height: 100%;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     #pfa-{{ sid }} .pfa-anim {
@@ -429,51 +449,79 @@
       {%- assign item_index = 0 -%}
       {%- for block in section.blocks -%}
         {%- if block.type == 'audience' and block.settings.enabled -%}
-          {%- if block.settings.title != blank or block.settings.image != blank -%}
+          {%- assign pfa_collection = block.settings.collection -%}
+          {%- assign pfa_title = block.settings.title -%}
+          {%- if pfa_title == blank and pfa_collection != blank -%}
+            {%- assign pfa_title = pfa_collection.title -%}
+          {%- endif -%}
+          {%- assign pfa_image = block.settings.image -%}
+          {%- if pfa_image == blank and pfa_collection != blank -%}
+            {%- assign pfa_image = pfa_collection.featured_image | default: pfa_collection.image -%}
+          {%- endif -%}
+          {%- assign pfa_url = blank -%}
+          {%- if pfa_collection != blank -%}
+            {%- assign pfa_url = pfa_collection.url -%}
+          {%- endif -%}
+
+          {%- if pfa_title != blank or pfa_image != blank or pfa_collection != blank -%}
             <li
-              class="pfa__item pfa-anim"
+              class="pfa-anim"
               data-pfa-anim
               style="--pfa-stagger: {{ item_index }};"
               {{ block.shopify_attributes }}
             >
-              <div class="pfa__icon{% if section.settings.icon_style == 'framed' %} pfa__icon--framed{% endif %}">
-                {%- if block.settings.image != blank -%}
-                  {%- assign icon_alt = block.settings.title | default: 'Audience' -%}
-                  {{
-                    block.settings.image
-                    | image_url: width: 300
-                    | image_tag:
-                      loading: 'lazy',
-                      decoding: 'async',
-                      widths: '80, 120, 160, 200, 300',
-                      sizes: '(min-width: 750px) 72px, 48px',
-                      alt: icon_alt
-                  }}
-                {%- else -%}
-                  {%- case block.settings.icon -%}
-                    {%- when 'bride' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-3.2 0-5.8 2.8-5.8 6.2 0 2.4 1.2 4.5 3 5.6L18 28h12l-3.2-10.2c1.8-1.1 3-3.2 3-5.6C29.8 8.8 27.2 6 24 6Z"/><path d="M16 42c1.5-5 4.4-8 8-8s6.5 3 8 8"/><path d="M12 18c2.5 1.5 5 2.2 8 2.2M36 18c-2.5 1.5-5 2.2-8 2.2"/><circle cx="24" cy="11.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-                    {%- when 'bridesmaid' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="14" r="5.5"/><path d="M14 42c1.8-7.5 5.5-11.5 10-11.5S32.2 34.5 34 42"/><path d="M18 24.5c-3.2.8-5.8 3-7 6.5M30 24.5c3.2.8 5.8 3 7 6.5"/><path d="M24 8.5V6M20.5 10l-1.5-1.5M27.5 10l1.5-1.5"/></svg>
-                    {%- when 'guest' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 8 28 16h8l-6.5 5 2.5 8L24 24l-8 5 2.5-8L12 16h8z"/><path d="M12 40c2-5 6-8 12-8s10 3 12 8"/></svg>
-                    {%- when 'party' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 40 34 12l2 1-8 28z"/><path d="M16 14c2 1.5 3.5 4 3.5 6.5M12 22c2.2 0 4 1.8 4 4M28 10c1.5-2 4-3 6.5-2.5M34 8c1-2.2 3.2-3.5 5.5-3.5"/><circle cx="14" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="38" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>
-                    {%- when 'birthday' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22h28v16a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V22Z"/><path d="M10 28h28M24 10v8M24 10c0-2 1.5-3.5 1.5-3.5S27 10 24 10ZM16 14v6M32 14v6M16 14c0-1.5 1-2.8 1-2.8S18 14 16 14ZM32 14c0-1.5 1-2.8 1-2.8S34 14 32 14Z"/></svg>
-                    {%- when 'festive' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11.5 11.5l2.8 2.8M33.7 33.7l2.8 2.8M11.5 36.5l2.8-2.8M33.7 14.3l2.8-2.8"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/></svg>
-                    {%- when 'anniversary' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 40s-12-7.8-12-16.5A7.5 7.5 0 0 1 24 18a7.5 7.5 0 0 1 12 5.5C36 32.2 24 40 24 40Z"/><path d="M18 14c1-3 3.5-5 6-5M30 14c-1-3-3.5-5-6-5"/></svg>
-                    {%- when 'everyday' -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="10"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4"/><circle cx="24" cy="24" r="3"/></svg>
+              {%- if pfa_url != blank -%}
+                <a
+                  class="pfa__item"
+                  href="{{ pfa_url }}"
+                  {% if pfa_title != blank %}aria-label="Shop {{ pfa_title | escape }}"{% endif %}
+                >
+              {%- else -%}
+                <div class="pfa__item pfa__item--static">
+              {%- endif -%}
+                  <div class="pfa__icon{% if section.settings.icon_style == 'framed' %} pfa__icon--framed{% endif %}{% if pfa_image != blank %} pfa__icon--photo{% endif %}">
+                    {%- if pfa_image != blank -%}
+                      {%- assign icon_alt = pfa_title | default: pfa_collection.title | default: 'Collection' -%}
+                      {{
+                        pfa_image
+                        | image_url: width: 300
+                        | image_tag:
+                          loading: 'lazy',
+                          decoding: 'async',
+                          widths: '80, 120, 160, 200, 300',
+                          sizes: '(min-width: 750px) 72px, 48px',
+                          alt: icon_alt
+                      }}
                     {%- else -%}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18c0-5.5 4.5-10 10-10s10 4.5 10 10c0 8-10 14-10 14S14 26 14 18Z"/><circle cx="24" cy="18" r="3"/><path d="M18 40h12"/></svg>
-                  {%- endcase -%}
-                {%- endif -%}
-              </div>
-              {%- if block.settings.title != blank -%}
-                <p class="pfa__label">{{ block.settings.title | escape }}</p>
+                      {%- case block.settings.icon -%}
+                        {%- when 'bride' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-3.2 0-5.8 2.8-5.8 6.2 0 2.4 1.2 4.5 3 5.6L18 28h12l-3.2-10.2c1.8-1.1 3-3.2 3-5.6C29.8 8.8 27.2 6 24 6Z"/><path d="M16 42c1.5-5 4.4-8 8-8s6.5 3 8 8"/><path d="M12 18c2.5 1.5 5 2.2 8 2.2M36 18c-2.5 1.5-5 2.2-8 2.2"/><circle cx="24" cy="11.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'bridesmaid' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="14" r="5.5"/><path d="M14 42c1.8-7.5 5.5-11.5 10-11.5S32.2 34.5 34 42"/><path d="M18 24.5c-3.2.8-5.8 3-7 6.5M30 24.5c3.2.8 5.8 3 7 6.5"/><path d="M24 8.5V6M20.5 10l-1.5-1.5M27.5 10l1.5-1.5"/></svg>
+                        {%- when 'guest' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 8 28 16h8l-6.5 5 2.5 8L24 24l-8 5 2.5-8L12 16h8z"/><path d="M12 40c2-5 6-8 12-8s10 3 12 8"/></svg>
+                        {%- when 'party' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 40 34 12l2 1-8 28z"/><path d="M16 14c2 1.5 3.5 4 3.5 6.5M12 22c2.2 0 4 1.8 4 4M28 10c1.5-2 4-3 6.5-2.5M34 8c1-2.2 3.2-3.5 5.5-3.5"/><circle cx="14" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="38" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'birthday' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22h28v16a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V22Z"/><path d="M10 28h28M24 10v8M24 10c0-2 1.5-3.5 1.5-3.5S27 10 24 10ZM16 14v6M32 14v6M16 14c0-1.5 1-2.8 1-2.8S18 14 16 14ZM32 14c0-1.5 1-2.8 1-2.8S34 14 32 14Z"/></svg>
+                        {%- when 'festive' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11.5 11.5l2.8 2.8M33.7 33.7l2.8 2.8M11.5 36.5l2.8-2.8M33.7 14.3l2.8-2.8"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'anniversary' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 40s-12-7.8-12-16.5A7.5 7.5 0 0 1 24 18a7.5 7.5 0 0 1 12 5.5C36 32.2 24 40 24 40Z"/><path d="M18 14c1-3 3.5-5 6-5M30 14c-1-3-3.5-5-6-5"/></svg>
+                        {%- when 'everyday' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="10"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4"/><circle cx="24" cy="24" r="3"/></svg>
+                        {%- else -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18c0-5.5 4.5-10 10-10s10 4.5 10 10c0 8-10 14-10 14S14 26 14 18Z"/><circle cx="24" cy="18" r="3"/><path d="M18 40h12"/></svg>
+                      {%- endcase -%}
+                    {%- endif -%}
+                  </div>
+                  {%- if pfa_title != blank -%}
+                    <p class="pfa__label">{{ pfa_title | escape }}</p>
+                  {%- endif -%}
+              {%- if pfa_url != blank -%}
+                </a>
+              {%- else -%}
+                </div>
               {%- endif -%}
             </li>
             {%- assign item_index = item_index | plus: 1 -%}
@@ -889,7 +937,7 @@
   "blocks": [
     {
       "type": "audience",
-      "name": "Audience",
+      "name": "Collection",
       "settings": [
         {
           "type": "checkbox",
@@ -898,15 +946,28 @@
           "default": true
         },
         {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Card links to this collection. Title and image fall back to the collection when custom fields are empty."
+        },
+        {
           "type": "text",
           "id": "title",
-          "label": "Label",
-          "default": "Bride"
+          "label": "Custom title",
+          "info": "Optional. Leave blank to use the collection title."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom image",
+          "info": "Optional. Leave blank to use the collection image."
         },
         {
           "type": "select",
           "id": "icon",
-          "label": "Built-in icon",
+          "label": "Fallback icon",
+          "info": "Used when no custom image or collection image is available.",
           "options": [
             { "value": "bride", "label": "Bride" },
             { "value": "bridesmaid", "label": "Bridesmaid" },
@@ -919,12 +980,6 @@
             { "value": "sparkle", "label": "Sparkle" }
           ],
           "default": "bride"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Custom icon image",
-          "info": "Optional. Replaces the built-in icon when set."
         }
       ]
     }

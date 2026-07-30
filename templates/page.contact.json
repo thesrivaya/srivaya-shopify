@@ -1,1 +1,160 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":36,"padding_bottom":0}},"blocks_9Vyfiz":{"type":"_blocks","blocks":{"ai_gen_block_2712150_QaNNfB":{"type":"ai_gen_block_2712150","settings":{"hero_title":"We'd Love to Hear From You ✨","hero_subtext":"<p>Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.<\/p>","hero_bg_color":"#f7ede8","hero_text_color":"#a46959","hero_title_size_mobile":28,"hero_title_size_desktop":48,"hero_subtext_size_mobile":15,"hero_subtext_size_desktop":18,"hero_padding_mobile":40,"hero_padding_desktop":80,"details_bg_color":"#fcfbfa","details_padding_mobile":40,"details_padding_desktop":60,"card_bg_color":"#ffffff","card_border_color":"#e8ddd8","card_border_thickness":1,"card_border_radius":12,"card_title_color":"#835447","card_text_color":"#6b5b54","card_link_color":"#a46959","icon_size":60,"icon_bg_color":"#f7ede8","icon_color":"#a46959","show_phone":true,"phone_title":"Phone","phone_number":"+91 77778 77253","show_whatsapp":true,"whatsapp_title":"WhatsApp","whatsapp_number":"+917777877253","whatsapp_text":"+91 77778 77253","show_email":true,"email_title":"Email","email_address":"contact@adhouse.in","show_hours":true,"hours_title":"Business Hours","hours_text":"Monday to Saturday\n10:00 AM - 7:00 PM IST","show_address":true,"address_title":"Visit Us","address_text":"172, Greater Vaishali Color, Indore, Madhya Pradesh, Pincode - 452009","social_title":"Follow Us & Stay Inspired 💎","social_bg_color":"#f7f7f7","social_text_color":"#835447","social_title_size_mobile":24,"social_title_size_desktop":32,"social_padding_mobile":40,"social_padding_desktop":60,"social_icon_size":76,"social_icon_bg_color":"#ffffff","social_icon_color":"#a46959","social_icon_hover_bg":"#f7ede8","instagram_url":"https:\/\/www.instagram.com\/official_adhouse\/","facebook_url":"https:\/\/www.facebook.com\/profile.php?id=61574293116809","pinterest_url":"","youtube_url":"https:\/\/www.youtube.com\/@official_adhouse"},"blocks":{}}},"block_order":["ai_gen_block_2712150_QaNNfB"],"name":"Contact us","settings":{}},"blocks_Bi6Uf3":{"type":"_blocks","blocks":{"ai_gen_block_3acf5ec_CqmjzH":{"type":"ai_gen_block_3acf5ec","name":"Contact us page","settings":{"hero_title":"We'd Love to Hear From You ✨","hero_subtitle":"Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.","hero_title_size":42,"hero_subtitle_size":18,"hero_title_color":"#422a24","hero_subtitle_color":"#835447","show_phone":true,"phone_title":"Phone","phone_number":"+91-XXXXXXXXXX","show_whatsapp":true,"whatsapp_title":"WhatsApp","whatsapp_text":"Tap to chat instantly!","whatsapp_link":"","show_email":true,"email_title":"Email","email_address":"support@adhouse.in","show_hours":true,"hours_title":"Business Hours","business_hours":"Monday – Saturday, 10:00 AM – 7:00 PM IST","show_address":true,"address_title":"Address","address":"","show_social":true,"social_title":"Follow Us & Stay Inspired 💎","instagram_url":"","facebook_url":"","pinterest_url":"","youtube_url":"","show_form":true,"form_title":"Send Us a Message","form_button_label":"Send Message","form_success_message":"Thank you! We've received your message and will respond within 24 hours.","trust_line":"We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft.","background_color":"#fcfbfa","background_gradient_color":"#f7f7f7","card_background":"#ffffff","card_title_color":"#422a24","card_text_color":"#835447","link_color":"#a46959","social_title_color":"#422a24","social_icon_background":"#a46959","social_icon_color":"#ffffff","social_icon_hover_background":"#835447","form_background":"#ffffff","form_title_color":"#422a24","form_label_color":"#422a24","form_input_text":"#422a24","form_input_background":"#fcfbfa","form_input_border":"#e0d5d1","form_input_focus_border":"#a46959","form_button_background":"#a46959","form_button_text_color":"#ffffff","form_button_hover_background":"#835447","trust_text_color":"#835447","card_border_radius":18,"form_border_radius":18},"blocks":{}}},"block_order":["ai_gen_block_3acf5ec_CqmjzH"],"name":"Contact us","settings":{}}},"order":["main","blocks_9Vyfiz","blocks_Bi6Uf3"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "blocks_9Vyfiz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2712150_QaNNfB": {
+          "type": "ai_gen_block_2712150",
+          "settings": {
+            "hero_title": "We'd Love to Hear From You ✨",
+            "hero_subtext": "<p>Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.</p>",
+            "hero_bg_color": "#f6f1f2",
+            "hero_text_color": "#20181a",
+            "hero_title_size_mobile": 28,
+            "hero_title_size_desktop": 48,
+            "hero_subtext_size_mobile": 15,
+            "hero_subtext_size_desktop": 18,
+            "hero_padding_mobile": 40,
+            "hero_padding_desktop": 80,
+            "details_bg_color": "#ffffff",
+            "details_padding_mobile": 40,
+            "details_padding_desktop": 60,
+            "card_bg_color": "#ffffff",
+            "card_border_color": "#e3d6d9",
+            "card_border_thickness": 1,
+            "card_border_radius": 12,
+            "card_title_color": "#20181a",
+            "card_text_color": "#61474d",
+            "card_link_color": "#6f4b53",
+            "icon_size": 60,
+            "icon_bg_color": "#f6f1f2",
+            "icon_color": "#6f4b53",
+            "show_phone": true,
+            "phone_title": "Phone",
+            "phone_number": "+91 77778 77253",
+            "show_whatsapp": true,
+            "whatsapp_title": "WhatsApp",
+            "whatsapp_number": "+917777877253",
+            "whatsapp_text": "+91 77778 77253",
+            "show_email": true,
+            "email_title": "Email",
+            "email_address": "contact@adhouse.in",
+            "show_hours": true,
+            "hours_title": "Business Hours",
+            "hours_text": "Monday to Saturday\n10:00 AM - 7:00 PM IST",
+            "show_address": true,
+            "address_title": "Visit Us",
+            "address_text": "172, Greater Vaishali Color, Indore, Madhya Pradesh, Pincode - 452009",
+            "social_title": "Follow Us & Stay Inspired 💎",
+            "social_bg_color": "#f6f1f2",
+            "social_text_color": "#20181a",
+            "social_title_size_mobile": 24,
+            "social_title_size_desktop": 32,
+            "social_padding_mobile": 40,
+            "social_padding_desktop": 60,
+            "social_icon_size": 76,
+            "social_icon_bg_color": "#ffffff",
+            "social_icon_color": "#6f4b53",
+            "social_icon_hover_bg": "#ece4e6",
+            "instagram_url": "https://www.instagram.com/official_adhouse/",
+            "facebook_url": "https://www.facebook.com/profile.php?id=61574293116809",
+            "pinterest_url": "",
+            "youtube_url": "https://www.youtube.com/@official_adhouse"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2712150_QaNNfB"
+      ],
+      "name": "Contact us",
+      "settings": {}
+    },
+    "blocks_Bi6Uf3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3acf5ec_CqmjzH": {
+          "type": "ai_gen_block_3acf5ec",
+          "name": "Contact us page",
+          "settings": {
+            "hero_title": "We'd Love to Hear From You ✨",
+            "hero_subtitle": "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.",
+            "hero_title_size": 40,
+            "hero_subtitle_size": 18,
+            "hero_title_color": "#20181a",
+            "hero_subtitle_color": "#61474d",
+            "show_phone": true,
+            "phone_title": "Phone",
+            "phone_number": "+91-XXXXXXXXXX",
+            "show_whatsapp": true,
+            "whatsapp_title": "WhatsApp",
+            "whatsapp_text": "Tap to chat instantly!",
+            "whatsapp_link": "",
+            "show_email": true,
+            "email_title": "Email",
+            "email_address": "support@adhouse.in",
+            "show_hours": true,
+            "hours_title": "Business Hours",
+            "business_hours": "Monday – Saturday, 10:00 AM – 7:00 PM IST",
+            "show_address": true,
+            "address_title": "Address",
+            "address": "",
+            "show_social": true,
+            "social_title": "Follow Us & Stay Inspired 💎",
+            "instagram_url": "",
+            "facebook_url": "",
+            "pinterest_url": "",
+            "youtube_url": "",
+            "show_form": true,
+            "form_title": "Send Us a Message",
+            "form_button_label": "Send Message",
+            "form_success_message": "Thank you! We've received your message and will respond within 24 hours.",
+            "trust_line": "We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft.",
+            "background_color": "#ffffff",
+            "background_gradient_color": "#f6f1f2",
+            "card_background": "#ffffff",
+            "card_title_color": "#20181a",
+            "card_text_color": "#61474d",
+            "link_color": "#6f4b53",
+            "social_title_color": "#20181a",
+            "social_icon_background": "#6f4b53",
+            "social_icon_color": "#ffffff",
+            "social_icon_hover_background": "#513c40",
+            "form_background": "#ffffff",
+            "form_title_color": "#20181a",
+            "form_label_color": "#20181a",
+            "form_input_text": "#20181a",
+            "form_input_background": "#f6f1f2",
+            "form_input_border": "#e3d6d9",
+            "form_input_focus_border": "#6f4b53",
+            "form_button_background": "#6f4b53",
+            "form_button_text_color": "#ffffff",
+            "form_button_hover_background": "#513c40",
+            "trust_text_color": "#61474d",
+            "card_border_radius": 18,
+            "form_border_radius": 18
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3acf5ec_CqmjzH"
+      ],
+      "name": "Contact us",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "blocks_9Vyfiz",
+    "blocks_Bi6Uf3"
+  ]
+}
