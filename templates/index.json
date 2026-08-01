@@ -585,7 +585,7 @@
       ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "bridemaids-collection",
+        "collection": "curated-by-srivaya",
         "products_to_show": 8,
         "title": "Curated for You",
         "heading_size": "h0",
