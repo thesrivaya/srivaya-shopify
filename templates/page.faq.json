@@ -112,7 +112,7 @@
         "heading_size_mobile": 28,
         "content_width": 780,
         "open_first": true,
-        "items_limit": 8,
+        "items_limit": 0,
         "show_button": false,
         "button_label": "View all FAQs",
         "button_link": "",
