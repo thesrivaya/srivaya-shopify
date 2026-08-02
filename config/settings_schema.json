@@ -1360,6 +1360,42 @@
     ]
   },
   {
+    "name": "SEO",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Homepage title and description shown in Google. Tip: also set these under Shopify Admin → Online Store → Preferences, then request indexing in Google Search Console."
+      },
+      {
+        "type": "text",
+        "id": "seo_homepage_title",
+        "label": "Homepage SEO title",
+        "default": "Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya",
+        "info": "Rubans-style format: keywords first, brand at the end. Aim for ~50–65 characters."
+      },
+      {
+        "type": "textarea",
+        "id": "seo_homepage_description",
+        "label": "Homepage meta description",
+        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+        "info": "Aim for ~140–155 characters. Replaces empty or “Welcome to our store” descriptions."
+      },
+      {
+        "type": "textarea",
+        "id": "seo_default_description",
+        "label": "Default meta description (fallback)",
+        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+        "info": "Used when a page has no SEO description."
+      },
+      {
+        "type": "image_picker",
+        "id": "seo_share_image",
+        "label": "Default social share image",
+        "info": "Used for Open Graph / Twitter when the page has no image. Recommended 1200×630px."
+      }
+    ]
+  },
+  {
     "name": "Track Package",
     "settings": [
       {
