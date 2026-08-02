@@ -323,119 +323,79 @@
     "perfect_fit_audience_GJxzHh": {
       "type": "perfect-fit-audience",
       "blocks": {
-        "audience_P9ErVY": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "bride-collection",
-            "title": "A Bride",
-            "icon": "bride"
-          }
-        },
-        "audience_MqyQFf": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "bridemaids-collection",
-            "title": "A Bridesmaid",
-            "icon": "bridesmaid"
-          }
-        },
-        "audience_giFHcF": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "",
-            "title": "Attending a Function",
-            "icon": "guest"
-          }
-        },
-        "audience_Fzm7z7": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "",
-            "title": "Going to a Party",
-            "icon": "party"
-          }
-        },
-        "audience_JiLTGR": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "",
-            "title": "Celebrating Your Day",
-            "icon": "festive"
-          }
-        },
-        "audience_pajNBN": {
+        "audience_wrapped": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "birthday-collection",
-            "title": "Birthday",
-            "icon": "birthday"
-          }
-        },
-        "audience_PeqQij": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "anniversary-collection",
-            "title": "Anniversary",
+            "title": "Wrapped for Her",
             "icon": "anniversary"
           }
         },
-        "audience_MrHedB": {
+        "audience_sister": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "",
-            "title": "Everyday Elegance",
-            "icon": "everyday"
+            "title": "Sisters Love",
+            "icon": "birthday"
           }
         },
-        "audience_Mwy97q": {
+        "audience_gift": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "",
-            "title": "Festive Season",
+            "title": "Gift Ready",
             "icon": "sparkle"
           }
         },
-        "audience_ijkFDX": {
+        "audience_family": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "",
-            "title": "Wedding Guest",
+            "title": "Family Gatherings",
             "icon": "guest"
+          }
+        },
+        "audience_party": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Party Looks",
+            "icon": "party"
+          }
+        },
+        "audience_festive": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Festive Nights",
+            "icon": "festive"
           }
         }
       },
       "block_order": [
-        "audience_P9ErVY",
-        "audience_MqyQFf",
-        "audience_giFHcF",
-        "audience_Fzm7z7",
-        "audience_JiLTGR",
-        "audience_pajNBN",
-        "audience_PeqQij",
-        "audience_MrHedB",
-        "audience_Mwy97q",
-        "audience_ijkFDX"
+        "audience_wrapped",
+        "audience_sister",
+        "audience_gift",
+        "audience_family",
+        "audience_party",
+        "audience_festive"
       ],
       "name": "Perfect Fit Audience",
       "settings": {
-        "heading": "Perfect Fit For You",
-        "highlight_text": "If You Are:",
-        "subtext": "Jewellery styled for every celebration — from your wedding day to everyday elegance.",
+        "heading": "Find your moment",
+        "highlight_text": "Srivaya picks",
+        "subtext": "Shop by the moment — gifts, sisters, family, parties, and festive nights.",
         "heading_alignment": "center",
         "heading_max_width": 720,
         "full_width": false,
         "container_width": 1200,
-        "columns_desktop": 5,
+        "columns_desktop": 3,
         "columns_tablet": 3,
         "columns_mobile": 2,
         "item_gap": 16,
@@ -477,52 +437,52 @@
           "type": "metric",
           "settings": {
             "enabled": true,
-            "stat": "12,480",
+            "stat": "0",
             "prefix": "",
             "suffix": "",
-            "count_value": "12480",
+            "count_value": "0",
             "count_decimals": 0,
-            "caption": "Orders delivered",
-            "subtext": "All time"
+            "caption": "Jewellery orders yesterday",
+            "subtext": "From last day’s closing"
           }
         },
         "metric_G7PVgL": {
           "type": "metric",
           "settings": {
             "enabled": true,
-            "stat": "186",
+            "stat": "0",
             "prefix": "",
             "suffix": "",
-            "count_value": "186",
+            "count_value": "0",
             "count_decimals": 0,
-            "caption": "Orders today",
-            "subtext": "Updated live in editor"
+            "caption": "Pieces on their way",
+            "subtext": "Carefully packed & shipped"
           }
         },
         "metric_BVRzKc": {
           "type": "metric",
           "settings": {
             "enabled": true,
-            "stat": "48,920",
+            "stat": "0",
             "prefix": "",
             "suffix": "",
-            "count_value": "48920",
+            "count_value": "0",
             "count_decimals": 0,
-            "caption": "Total customers",
-            "subtext": "Till date"
+            "caption": "Orders till last closing",
+            "subtext": "Every order counted, transparently"
           }
         },
         "metric_xBGkhP": {
           "type": "metric",
           "settings": {
             "enabled": true,
-            "stat": "42",
+            "stat": "0",
             "prefix": "",
             "suffix": "",
-            "count_value": "42",
+            "count_value": "0",
             "count_decimals": 0,
-            "caption": "Repeat orders today",
-            "subtext": "Returning customers"
+            "caption": "Repeat buyers yesterday",
+            "subtext": "Love that brings them back"
           }
         }
       },
@@ -534,9 +494,9 @@
       ],
       "name": "Store Metrics",
       "settings": {
-        "label": "By the numbers",
-        "heading": "Crafted with care. Chosen with confidence.",
-        "description": "",
+        "label": "Our quiet proof",
+        "heading": "Truth, told in numbers.",
+        "description": "After every closing day, we share a simple snapshot of Srivaya — honest figures, no filters, so you can shop with complete confidence.",
         "text_alignment": "center",
         "metrics_alignment": "center",
         "show_index": true,
@@ -544,7 +504,7 @@
         "divider_length": "medium",
         "full_width": false,
         "container_width": 1200,
-        "header_max_width": 640,
+        "header_max_width": 720,
         "header_spacing": 36,
         "columns_desktop": 4,
         "columns_tablet": "2",
@@ -823,55 +783,73 @@
     "brand_promise_ipNWDk": {
       "type": "brand-promise",
       "blocks": {
-        "icon_zEV6QM": {
+        "icon_gst": {
           "type": "icon",
           "settings": {
             "enabled": true,
-            "icon_style": "quality",
-            "title": "Clean Compatible"
+            "icon_style": "gst",
+            "title": "GST Registered"
           }
         },
-        "icon_YzhxbK": {
+        "icon_whatsapp": {
           "type": "icon",
           "settings": {
             "enabled": true,
-            "icon_style": "quality",
-            "title": "Thoughtfully formulated"
+            "icon_style": "whatsapp",
+            "title": "WhatsApp Support"
           }
         },
-        "icon_39MhT9": {
+        "icon_packaging": {
           "type": "icon",
           "settings": {
             "enabled": true,
-            "icon_style": "quality",
-            "title": "Quality craftsmanship"
+            "icon_style": "packaging",
+            "title": "Secure Packaging"
           }
         },
-        "icon_MfCpgW": {
+        "icon_returns": {
           "type": "icon",
           "settings": {
             "enabled": true,
-            "icon_style": "quality",
-            "title": "Made with care"
+            "icon_style": "returns",
+            "title": "Easy Returns"
+          }
+        },
+        "icon_shipping": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "shipping",
+            "title": "Free Shipping ₹499+"
+          }
+        },
+        "icon_photos": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "photos",
+            "title": "Real Product Photos"
           }
         }
       },
       "block_order": [
-        "icon_zEV6QM",
-        "icon_YzhxbK",
-        "icon_39MhT9",
-        "icon_MfCpgW"
+        "icon_gst",
+        "icon_whatsapp",
+        "icon_packaging",
+        "icon_returns",
+        "icon_shipping",
+        "icon_photos"
       ],
       "name": "Brand Promise",
       "settings": {
-        "label": "Clean Compatible",
+        "label": "Shop with confidence",
         "heading": "Our Promise",
-        "text": "<p>Not just <strong>free of harmful and toxic chemicals</strong>, but made with ingredients that enhance the beauty of every piece and support lasting quality and craftsmanship.</p>",
+        "text": "<p>Every order is backed by clear policies, careful packing, and real support — so you can shop jewellery online with complete peace of mind.</p>",
         "copy_alignment": "center",
         "show_promise_icon": true,
-        "promise_icon": "seal",
+        "promise_icon": "check",
         "promise_icon_size": 64,
-        "media_mode": "auto",
+        "media_mode": "icons",
         "image_alt": "Our brand promise",
         "image_aspect": "portrait",
         "image_fit": "cover",
@@ -879,11 +857,11 @@
         "hover_zoom": true,
         "enable_media_depth": true,
         "shadow_strength": "soft",
-        "icon_size": 88,
+        "icon_size": 96,
         "icon_gap": 28,
-        "icons_per_row_desktop": "2",
+        "icons_per_row_desktop": "3",
         "icons_per_row_mobile": "2",
-        "icon_shape": "rounded",
+        "icon_shape": "circle",
         "icon_radius": 12,
         "media_position": "left",
         "full_width": false,
