@@ -1480,6 +1480,33 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "Free shipping / delivery fee"
+      },
+      {
+        "type": "paragraph",
+        "content": "This shows a progress message in the cart. To actually charge ₹99 at checkout when the order is under ₹499, set price-based shipping rates in Shopify Admin → Settings → Shipping and delivery."
+      },
+      {
+        "type": "checkbox",
+        "id": "free_shipping_enable",
+        "label": "Show free shipping progress in cart",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping threshold (₹)",
+        "default": 499,
+        "info": "Orders at or above this amount get free delivery"
+      },
+      {
+        "type": "number",
+        "id": "delivery_fee",
+        "label": "Delivery fee below threshold (₹)",
+        "default": 99
       }
     ]
   }
