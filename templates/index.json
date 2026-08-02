@@ -700,6 +700,7 @@
         "creator_review_JEyNTn",
         "creator_review_PTUwED"
       ],
+      "disabled": true,
       "name": "Creator Reviews Marquee",
       "settings": {
         "title": "Loved by creators",
@@ -794,6 +795,7 @@
         "review_LiNGhP",
         "review_pkNzbU"
       ],
+      "disabled": true,
       "name": "Customer Reviews Marquee",
       "settings": {
         "heading": "Loved by our customers",
