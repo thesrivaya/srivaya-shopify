@@ -1360,6 +1360,37 @@
     ]
   },
   {
+    "name": "Track Package",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "track_package_enable",
+        "label": "Enable Track Package",
+        "info": "Shows in the footer Help section and mobile navigation. Opens WhatsApp with a prefilled message.",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_phone",
+        "label": "WhatsApp number",
+        "info": "Include country code (e.g. +917067762371)",
+        "default": "+917067762371"
+      },
+      {
+        "type": "text",
+        "id": "track_package_label",
+        "label": "Link label",
+        "default": "Track Package"
+      },
+      {
+        "type": "textarea",
+        "id": "track_package_message",
+        "label": "WhatsApp message",
+        "default": "Hi! I would like to track my package. Please share your order details (order number and registered phone or email) so we can update you on your order status."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.search_input.name",
     "settings": [
       {

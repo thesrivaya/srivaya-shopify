@@ -133,6 +133,14 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+              {%- if settings.track_package_enable and settings.whatsapp_phone != blank -%}
+                <li>
+                  {% render 'track-package-link',
+                    id: 'HeaderDrawer-track-package',
+                    class: 'menu-drawer__menu-item list-menu__item link link--text focus-inset'
+                  %}
+                </li>
+              {%- endif -%}
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">

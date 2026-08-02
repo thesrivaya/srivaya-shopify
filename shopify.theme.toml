@@ -1,0 +1,4 @@
+# Default environment for Shopify CLI — skips interactive store picker
+[environments.default]
+store = "srivaya.myshopify.com"
+theme = "160051003577"

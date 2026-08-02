@@ -23,8 +23,8 @@
   --sv-radius: 6px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-duration: 250ms;
-  --sv-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --sv-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sv-serif: var(--font-heading-family);
+  --sv-sans: var(--font-heading-family);
   color: var(--sv-body);
   font-family: var(--sv-sans);
 }
