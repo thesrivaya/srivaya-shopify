@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/srivayafinal.png",
     "logo_width": 160,
-    "favicon": "shopify://shop_images/srivayalogo.png",
+    "favicon": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_10_23_23_PM.png",
     "type_header_font": "plus_jakarta_sans_n4",
     "heading_scale": 100,
     "type_body_font": "plus_jakarta_sans_n4",
@@ -156,11 +156,6 @@
     "blocks": {
       "9717370649079274736": {
         "type": "shopify://apps/otp-login-notify/blocks/app-embed-block/c26b7b17-273d-4800-af62-8ec88ba18251",
-        "disabled": false,
-        "settings": {}
-      },
-      "1219337400145039034": {
-        "type": "shopify://apps/kwikpass/blocks/kp_login/603e209b-d585-47ff-8592-837a4faa325b",
         "disabled": false,
         "settings": {}
       }
