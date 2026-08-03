@@ -21,7 +21,7 @@
             "desktop_height_unit": "px",
             "mobile_height": 300,
             "mobile_height_unit": "px",
-            "subtext": "Explore Collection",
+            "subtext": "New Collection",
             "heading": "Discover Luxury",
             "button_text": "Shop Now",
             "button_link": "",
@@ -896,7 +896,7 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Are the product photos real or AI-generated?",
+            "question": "Are these product photos real or AI-generated?",
             "answer": "<p>All the images on our website are 100% real photographs of the actual products. We do not use AI-generated product images, so what you see is a true representation of the jewellery you will receive. Please note that slight colour variations may occur due to screen settings, lighting, or device displays.</p>"
           }
         },
