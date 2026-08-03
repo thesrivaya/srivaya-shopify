@@ -86,6 +86,21 @@
         "padding_bottom": 60
       }
     },
+    "1785779224b7b62341": {
+      "type": "apps",
+      "blocks": {
+        "razorpay_cod_magic_checkout_review_widget_VfKdLj": {
+          "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/review-widget/c13c688d-5c45-4054-b95f-1edd63faa705",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "razorpay_cod_magic_checkout_review_widget_VfKdLj"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -104,17 +119,8 @@
         "padding_bottom": 60
       }
     },
-    "1785779224b7b62341": {
+    "1785779302a05c3520": {
       "type": "apps",
-      "blocks": {
-        "razorpay_cod_magic_checkout_review_widget_VfKdLj": {
-          "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/review-widget/c13c688d-5c45-4054-b95f-1edd63faa705",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "razorpay_cod_magic_checkout_review_widget_VfKdLj"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -123,6 +129,7 @@
   "order": [
     "main",
     "1785779224b7b62341",
-    "related-products"
+    "related-products",
+    "1785779302a05c3520"
   ]
 }
