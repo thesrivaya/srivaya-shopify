@@ -119,10 +119,10 @@
     "social_pinterest_link": "",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
-    "track_package_enable": true,
     "seo_homepage_title": "Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya",
     "seo_homepage_description": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
     "seo_default_description": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+    "track_package_enable": true,
     "whatsapp_phone": "+917067762371",
     "track_package_label": "Track Package",
     "track_package_message": "Hi! I would like to track my package. Please share your order details (order number and registered phone or email) so we can update you on your order status.",
@@ -153,6 +153,13 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "9717370649079274736": {
+        "type": "shopify://apps/otp-login-notify/blocks/app-embed-block/c26b7b17-273d-4800-af62-8ec88ba18251",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
