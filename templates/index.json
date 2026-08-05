@@ -24,7 +24,7 @@
             "subtext": "New Collection",
             "heading": "Discover Luxury",
             "button_text": "Shop Now",
-            "button_link": "",
+            "button_link": "shopify://collections/all",
             "content_max_width": 600,
             "desktop_horizontal_align": "flex-start",
             "desktop_vertical_align": "center",
