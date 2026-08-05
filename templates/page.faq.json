@@ -23,15 +23,15 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Are these product photos real or AI-generated?",
-            "answer": "<p>All the images on our website are 100% real photographs of the actual products. We do not use AI-generated product images, so what you see is a true representation of the jewellery you will receive. Please note that slight colour variations may occur due to screen settings, lighting, or device displays.</p>"
+            "question": "Are these product photos real?",
+            "answer": "<p>Yes. All images on our website are real photographs of the actual products. We do not use AI for product images. Slight colour differences can happen because of screen settings or lighting.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "Do you offer Cash on Delivery (COD)?",
-            "answer": "<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit/debit cards, net banking, and digital wallets. This helps us ensure faster order processing, secure transactions, and a seamless shopping experience.</p>"
+            "answer": "<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit/debit cards, net banking, and digital wallets. This helps us process orders faster and keep payments secure.</p>"
           }
         },
         "faq_3": {
@@ -87,7 +87,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Srivaya for support?",
-            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 7777877253</a></p><p><strong>Email:</strong> <a href=\"mailto:support@adhouse.in\">support@adhouse.in</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
+            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:thesrivaya@gmail.com\">thesrivaya@gmail.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
           }
         }
       },

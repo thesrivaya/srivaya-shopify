@@ -1993,6 +1993,115 @@ input[type='checkbox'] {
   -moz-appearance: textfield;
 }
 
+/* Srivaya — shared underline quantity (product + cart) */
+.product-info-luxury quantity-input.quantity,
+quantity-input.cart-quantity {
+  --sv-qty-ink: #312426;
+  --sv-qty-cta: #6f4b53;
+  --sv-qty-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sv-qty-duration: 250ms;
+  width: auto;
+  max-width: none;
+  height: 4rem;
+  min-height: 4rem;
+  border: none;
+  border-bottom: 1px solid rgba(43, 43, 43, 0.28);
+  border-radius: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: border-color var(--sv-qty-duration) var(--sv-qty-ease);
+}
+
+.product-info-luxury quantity-input.quantity:before,
+.product-info-luxury quantity-input.quantity:after,
+quantity-input.cart-quantity:before,
+quantity-input.cart-quantity:after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.product-info-luxury quantity-input.quantity:hover,
+quantity-input.cart-quantity:hover {
+  transform: none;
+  box-shadow: none !important;
+  border-color: var(--sv-qty-ink);
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.product-info-luxury .quantity__button,
+quantity-input.cart-quantity .quantity__button {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  margin: 0;
+  color: var(--sv-qty-ink);
+  opacity: 0.7;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.product-info-luxury .quantity__button:hover,
+quantity-input.cart-quantity .quantity__button:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 1;
+  color: var(--sv-qty-cta);
+}
+
+.product-info-luxury .quantity__button:focus,
+.product-info-luxury .quantity__button:focus-visible,
+.product-info-luxury .quantity__input:focus,
+.product-info-luxury .quantity__input:focus-visible,
+quantity-input.cart-quantity .quantity__button:focus,
+quantity-input.cart-quantity .quantity__button:focus-visible,
+quantity-input.cart-quantity .quantity__input:focus,
+quantity-input.cart-quantity .quantity__input:focus-visible,
+.product-info-luxury .quantity__button:not(:focus-visible):not(.focused),
+.product-info-luxury .quantity__input:not(:focus-visible):not(.focused),
+quantity-input.cart-quantity .quantity__button:not(:focus-visible):not(.focused),
+quantity-input.cart-quantity .quantity__input:not(:focus-visible):not(.focused) {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.product-info-luxury .quantity__input,
+quantity-input.cart-quantity .quantity__input {
+  width: 4rem;
+  flex-grow: 0;
+  height: 3.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 1;
+  color: var(--sv-qty-ink);
+  border: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  text-align: center;
+  padding: 0;
+}
+
+.product-info-luxury .quantity__input:-webkit-autofill,
+.product-info-luxury .quantity__input:-webkit-autofill:hover,
+.product-info-luxury .quantity__input:-webkit-autofill:active,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill:hover,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill:active {
+  box-shadow: 0 0 0 10rem transparent inset !important;
+  -webkit-box-shadow: 0 0 0 10rem transparent inset !important;
+  background-color: transparent !important;
+}
+
 .quantity__rules {
   margin-top: 0.5rem;
   position: relative;
@@ -2524,7 +2633,7 @@ input[type='checkbox'] {
 }
 
 .header__icon {
-  color: rgb(var(--color-foreground));
+  color: #6f4b53;
 }
 
 .header__icon span {
@@ -2794,12 +2903,14 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  font-weight: 500;
-  color: rgba(var(--color-foreground));
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #6f4b53;
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  color: #513c40;
 }
 
 .header__menu-item span {
@@ -2824,7 +2935,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: #6f4b53;
 }
 
 .header__submenu {

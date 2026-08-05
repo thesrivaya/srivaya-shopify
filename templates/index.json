@@ -272,7 +272,7 @@
       "settings": {
         "label": "Authenticity",
         "heading": "Why Real Photography Matters",
-        "description": "Every piece is photographed in-studio from the real product—never AI-generated—so colour, craft, and detail arrive exactly as you’ll wear them.",
+        "description": "We photograph every piece in our studio from the actual product, not with AI, so the colour, craft, and detail match what you receive.",
         "benefits_aria_label": "Reasons real photography matters",
         "image_alt": "Studio photograph of real jewellery",
         "image_height": 620,
@@ -329,7 +329,7 @@
             "enabled": true,
             "collection": "birthday-collection",
             "title": "Wrapped for Her",
-            "icon": "anniversary"
+            "icon": "gift"
           }
         },
         "audience_sister": {
@@ -338,7 +338,7 @@
             "enabled": true,
             "collection": "",
             "title": "Sisters Love",
-            "icon": "birthday"
+            "icon": "sisters"
           }
         },
         "audience_gift": {
@@ -347,7 +347,7 @@
             "enabled": true,
             "collection": "",
             "title": "Gift Ready",
-            "icon": "sparkle"
+            "icon": "anniversary"
           }
         },
         "audience_family": {
@@ -356,7 +356,7 @@
             "enabled": true,
             "collection": "",
             "title": "Family Gatherings",
-            "icon": "guest"
+            "icon": "family"
           }
         },
         "audience_party": {
@@ -390,7 +390,7 @@
       "settings": {
         "heading": "Find your moment",
         "highlight_text": "Srivaya picks",
-        "subtext": "Shop by the moment — gifts, sisters, family, parties, and festive nights.",
+        "subtext": "Jewellery made for love, sisters, family, celebrations, and every festive night.",
         "heading_alignment": "center",
         "heading_max_width": 720,
         "full_width": false,
@@ -496,7 +496,7 @@
       "settings": {
         "label": "Our quiet proof",
         "heading": "Truth, told in numbers.",
-        "description": "After every closing day, we share a simple snapshot of Srivaya — honest figures, no filters, so you can shop with complete confidence.",
+        "description": "After every closing day, we share a simple snapshot of Srivaya with honest figures and no filters, so you can shop with complete confidence.",
         "text_alignment": "center",
         "metrics_alignment": "center",
         "show_index": true,
@@ -606,7 +606,7 @@
             "social_handle": "@riyastyles",
             "creator_type": "Bride",
             "followers": "62K",
-            "review": "Wore these on my wedding week — they caught every camera flash beautifully.",
+            "review": "Wore these on my wedding week, and they caught every camera flash beautifully.",
             "platform": "youtube",
             "verified": true,
             "platform_url": ""
@@ -645,7 +645,7 @@
             "social_handle": "@priyanair",
             "creator_type": "Fashion Creator",
             "followers": "178K",
-            "review": "The craftsmanship is quiet luxury at its best — refined, radiant, timeless.",
+            "review": "The craftsmanship is quiet luxury at its best: refined, radiant, timeless.",
             "platform": "pinterest",
             "verified": true,
             "platform_url": ""
@@ -706,7 +706,7 @@
           "type": "review",
           "settings": {
             "customer_name": "Rohan Kapoor",
-            "review_text": "Gifted this to my wife — she was speechless. Packaging felt so premium."
+            "review_text": "Gifted this to my wife, and she was speechless. Packaging felt so premium."
           }
         },
         "review_zmFCni": {
@@ -844,7 +844,7 @@
       "settings": {
         "label": "Shop with confidence",
         "heading": "Our Promise",
-        "text": "<p>Every order is backed by clear policies, careful packing, and real support — so you can shop jewellery online with complete peace of mind.</p>",
+        "text": "<p>Packed with care, sent with love, and always here for you if you need us.</p>",
         "copy_alignment": "center",
         "show_promise_icon": true,
         "promise_icon": "check",
@@ -896,22 +896,22 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Are these product photos real or AI-generated?",
-            "answer": "<p>All the images on our website are 100% real photographs of the actual products. We do not use AI-generated product images, so what you see is a true representation of the jewellery you will receive. Please note that slight colour variations may occur due to screen settings, lighting, or device displays.</p>"
+            "question": "Are these product photos real?",
+            "answer": "<p>Yes. All images on our website are real photographs of the actual products. We do not use AI for product images. Slight colour differences can happen because of screen settings or lighting.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "Do you offer Cash on Delivery (COD)?",
-            "answer": "<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit/debit cards, net banking, and digital wallets. This helps us ensure faster order processing, secure transactions, and a seamless shopping experience.</p>"
+            "answer": "<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit/debit cards, net banking, and digital wallets. This helps us process orders faster and keep payments secure.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
             "question": "What are the shipping charges?",
-            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase—there are no hidden charges.</p>"
+            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.</p>"
           }
         },
         "faq_4": {
@@ -960,7 +960,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Srivaya for support?",
-            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 7777877253</a></p><p><strong>Email:</strong> <a href=\"mailto:support@adhouse.in\">support@adhouse.in</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
+            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:thesrivaya@gmail.com\">thesrivaya@gmail.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
           }
         }
       },

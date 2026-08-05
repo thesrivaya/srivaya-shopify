@@ -1304,6 +1304,10 @@
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
+        "type": "paragraph",
+        "content": "Edit social links once here. They are used in the footer, mobile menu, announcement bar, contact page, about page, and SEO."
+      },
+      {
         "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
@@ -1396,33 +1400,55 @@
     ]
   },
   {
-    "name": "Track Package",
+    "name": "Contact & WhatsApp",
     "settings": [
+      {
+        "type": "paragraph",
+        "content": "Used site-wide for Contact page, About, FAQ, Track Order, brand promise, and SEO. Edit once here."
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_phone",
+        "label": "WhatsApp / phone number",
+        "info": "Include country code (e.g. +917067762371). Used for WhatsApp links and phone cards.",
+        "default": "+917067762371"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone_display",
+        "label": "Phone display text",
+        "info": "How the number appears on the Contact page (e.g. +91 70677 62371). Leave blank to use the WhatsApp number as-is.",
+        "default": "+91 70677 62371"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Support email",
+        "info": "Used on Contact page, FAQ, and related sections.",
+        "default": "thesrivaya@gmail.com"
+      },
+      {
+        "type": "header",
+        "content": "Track Order"
+      },
       {
         "type": "checkbox",
         "id": "track_package_enable",
-        "label": "Enable Track Package",
+        "label": "Enable Track Order",
         "info": "Shows in the footer Help section and mobile navigation. Opens WhatsApp with a prefilled message.",
         "default": true
       },
       {
         "type": "text",
-        "id": "whatsapp_phone",
-        "label": "WhatsApp number",
-        "info": "Include country code (e.g. +917067762371)",
-        "default": "+917067762371"
-      },
-      {
-        "type": "text",
         "id": "track_package_label",
         "label": "Link label",
-        "default": "Track Package"
+        "default": "Track Order"
       },
       {
         "type": "textarea",
         "id": "track_package_message",
         "label": "WhatsApp message",
-        "default": "Hi! I would like to track my package. Please share your order details (order number and registered phone or email) so we can update you on your order status."
+        "default": "Hi! I would like to track my order. Please share your order details (order number and registered phone or email) so we can update you on your order status."
       }
     ]
   },
