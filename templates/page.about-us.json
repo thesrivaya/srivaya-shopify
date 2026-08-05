@@ -65,21 +65,26 @@
             "cta_text": "Explore our curated collection of jewellery made to shine with you.",
             "cta_label": "Shop the collection",
             "cta_link": "shopify://collections/all",
-            "cta_button_bg": "#6F4B53",
-            "cta_button_text": "#FFFFFF",
-            "cta_button_hover": "#513C40",
+            "cta_button_bg": "#6f4b53",
+            "cta_button_text": "#ffffff",
+            "cta_button_hover": "#513c40",
             "social_text": "Follow along and tag us — we love seeing you shine.",
-            "instagram_url": "https://www.instagram.com/official_adhouse/",
+            "instagram_url": "https://www.instagram.com/thesrivaya/",
             "facebook_url": "https://www.facebook.com/profile.php?id=61574293116809",
-            "pinterest_url": "",
-            "youtube_url": "https://www.youtube.com/@official_adhouse"
+            "pinterest_url": "https://in.pinterest.com/thesrivaya/",
+            "youtube_url": "https://www.youtube.com/@thesrivaya"
           },
           "blocks": {}
         }
       },
-      "block_order": ["ai_gen_block_65325a0_D7ddxB"],
+      "block_order": [
+        "ai_gen_block_65325a0_D7ddxB"
+      ],
       "settings": {}
     }
   },
-  "order": ["main", "1775040118e17c42a8"]
+  "order": [
+    "main",
+    "1775040118e17c42a8"
+  ]
 }
