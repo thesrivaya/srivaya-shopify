@@ -172,47 +172,53 @@
   width: 100%;
 }
 
-.product-info-luxury .product-form__submit {
+.product-info-luxury .product-form__submit,
+.product-info-luxury .product-form__submit.button--primary,
+.product-info-luxury .product-form__submit.button--secondary {
   height: auto;
-  min-height: 4.8rem;
-  padding: 1.4rem 2rem;
-  border-radius: var(--sv-radius);
+  min-height: 5.2rem;
+  padding: 1.6rem 2rem;
+  border-radius: 6px;
   background: transparent !important;
-  color: var(--sv-ink) !important;
+  background-color: transparent !important;
+  color: var(--sv-cta) !important;
   border: 1px solid color-mix(in srgb, var(--sv-cta) 40%, transparent) !important;
   box-shadow: none !important;
-  font-size: 1.1rem;
-  font-weight: 450;
-  letter-spacing: 0.18em;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: border-color var(--sv-duration) var(--sv-ease), background var(--sv-duration) var(--sv-ease);
 }
 
-.product-info-luxury .product-form__submit:hover:not([disabled]) {
+.product-info-luxury .product-form__submit:hover:not([disabled]),
+.product-info-luxury .product-form__submit.button--primary:hover:not([disabled]),
+.product-info-luxury .product-form__submit.button--secondary:hover:not([disabled]) {
   transform: none;
   box-shadow: none !important;
   border-color: var(--sv-cta) !important;
   background: color-mix(in srgb, var(--sv-cta) 6%, transparent) !important;
+  color: var(--sv-cta) !important;
 }
 
 .product-info-luxury .product-form__submit:focus-visible {
-  outline: 2px solid var(--sv-cta);
+  outline: 2px solid var(--sv-sage);
   outline-offset: 3px;
 }
 
 .product-info-luxury .shopify-payment-button__button,
 .product-info-luxury .shopify-payment-button__button--unbranded {
   height: auto !important;
-  min-height: 4.8rem !important;
-  padding: 1.4rem 2rem !important;
-  border-radius: var(--sv-radius) !important;
+  min-height: 5.2rem !important;
+  padding: 1.6rem 2rem !important;
+  border-radius: 6px !important;
   background: var(--sv-cta) !important;
   color: #f6f1f2 !important;
   border: none !important;
   box-shadow: none !important;
-  font-size: 1.1rem !important;
-  font-weight: 450 !important;
-  letter-spacing: 0.18em;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: background var(--sv-duration) var(--sv-ease) !important;
 }
@@ -647,7 +653,16 @@
 }
 
 .product-hero-surface {
-  background: #f6f1f2;
+  /* Lighter wash of Real Photography Trust atmosphere */
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, #e3d6d9 28%, #f6f1f2) 0%,
+      #f8f4f5 45%,
+      color-mix(in srgb, #6f4b53 3%, #f6f1f2) 100%
+    );
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
 }
 
 /* =========================================================
@@ -692,16 +707,6 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-
-.product-hero-surface {
-  background:
-    linear-gradient(
-      165deg,
-      color-mix(in srgb, #e3d6d9 55%, #f6f1f2) 0%,
-      #f6f1f2 42%,
-      color-mix(in srgb, #6f4b53 6%, #f6f1f2) 100%
-    );
 }
 
 .product-hero-luxury {
