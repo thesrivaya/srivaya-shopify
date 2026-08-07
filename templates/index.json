@@ -328,6 +328,7 @@
       "blocks": {
         "audience_wrapped": {
           "type": "audience",
+          "disabled": true,
           "settings": {
             "enabled": true,
             "collection": "wrapped-for-her",
@@ -355,6 +356,7 @@
         },
         "audience_family": {
           "type": "audience",
+          "disabled": true,
           "settings": {
             "enabled": true,
             "collection": "",
