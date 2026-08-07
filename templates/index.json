@@ -368,7 +368,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "",
+            "collection": "party-look",
             "title": "Party Looks",
             "icon": "party"
           }
