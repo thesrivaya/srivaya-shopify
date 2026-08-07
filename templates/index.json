@@ -340,7 +340,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "",
+            "collection": "wrapped-for-her",
             "title": "Sisters Love",
             "icon": "sisters"
           }
