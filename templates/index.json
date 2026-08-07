@@ -330,7 +330,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "birthday-collection",
+            "collection": "wrapped-for-her",
             "title": "Wrapped for Her",
             "icon": "gift"
           }
