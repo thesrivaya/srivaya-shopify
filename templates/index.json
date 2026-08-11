@@ -328,9 +328,10 @@
       "blocks": {
         "audience_wrapped": {
           "type": "audience",
+          "disabled": true,
           "settings": {
             "enabled": true,
-            "collection": "birthday-collection",
+            "collection": "wrapped-for-her",
             "title": "Wrapped for Her",
             "icon": "gift"
           }
@@ -339,7 +340,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "",
+            "collection": "wrapped-for-her",
             "title": "Sisters Love",
             "icon": "sisters"
           }
@@ -355,6 +356,7 @@
         },
         "audience_family": {
           "type": "audience",
+          "disabled": true,
           "settings": {
             "enabled": true,
             "collection": "",
@@ -366,7 +368,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "",
+            "collection": "party-look",
             "title": "Party Looks",
             "icon": "party"
           }
@@ -375,7 +377,7 @@
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "",
+            "collection": "festive-nights",
             "title": "Festive Nights",
             "icon": "festive"
           }

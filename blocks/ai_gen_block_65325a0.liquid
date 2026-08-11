@@ -803,7 +803,7 @@
         </div>
       </div>
 
-      <div class="sv-trust sv-reveal" data-sv-reveal data-sv-stats>
+      {% comment %} <div class="sv-trust sv-reveal" data-sv-reveal data-sv-stats>
         <div class="sv-trust-item">
           <p class="sv-trust-number" data-target="{{ block.settings.stat_1_value | default: 10000 }}" data-suffix="+">0</p>
           <p class="sv-trust-label">{{ block.settings.stat_1_label | default: 'Orders Delivered' }}</p>
@@ -820,7 +820,7 @@
           <p class="sv-trust-number" data-static="{{ block.settings.stat_4_value | default: 'Pan India' }}">{{ block.settings.stat_4_value | default: 'Pan India' }}</p>
           <p class="sv-trust-label">{{ block.settings.stat_4_label | default: 'Shipping' }}</p>
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </section>
 
