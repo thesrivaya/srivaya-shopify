@@ -6,8 +6,8 @@
 {%- liquid
   assign seo_title = page_title | strip
   assign seo_description = page_description | strip
-  assign default_home_title = 'Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya'
-  assign default_description = 'Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.'
+  assign default_home_title = 'Srivaya: Online Shopping For Fashion Jewellery, Necklaces & Earrings'
+  assign default_description = 'Experience the epitome of style with designer fashion jewellery. Explore a stunning collection that complements your personality.'
 
   if settings.seo_homepage_title != blank
     assign default_home_title = settings.seo_homepage_title
@@ -33,7 +33,8 @@
       assign seo_title = default_home_title
     endif
 
-    if description_is_weak
+    # Always prefer theme homepage description so Google shows the Rubans-style snippet.
+    if settings.seo_homepage_description != blank or description_is_weak
       assign seo_description = homepage_description
       assign description_is_weak = false
     endif

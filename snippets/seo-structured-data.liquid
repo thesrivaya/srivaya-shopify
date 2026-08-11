@@ -5,7 +5,7 @@
 {%- liquid
   assign org_description = settings.seo_default_description
   if org_description == blank
-    assign org_description = 'Srivaya offers fashion jewellery online in India — necklaces, earrings, rings, kadas and jewellery sets with real product photography and pan-India shipping.'
+    assign org_description = 'Experience the epitome of style with designer fashion jewellery from Srivaya. Explore a stunning collection that complements your personality.'
   endif
 
   assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''

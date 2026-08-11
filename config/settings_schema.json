@@ -1374,21 +1374,21 @@
         "type": "text",
         "id": "seo_homepage_title",
         "label": "Homepage SEO title",
-        "default": "Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya",
-        "info": "Rubans-style format: keywords first, brand at the end. Aim for ~50–65 characters."
+        "default": "Srivaya: Online Shopping For Fashion Jewellery, Necklaces & Earrings",
+        "info": "Rubans-style format: Brand: Online Shopping For …. Aim for ~50–65 characters."
       },
       {
         "type": "textarea",
         "id": "seo_homepage_description",
         "label": "Homepage meta description",
-        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
-        "info": "Aim for ~140–155 characters. Replaces empty or “Welcome to our store” descriptions."
+        "default": "Experience the epitome of style with designer fashion jewellery. Explore a stunning collection that complements your personality.",
+        "info": "Lifestyle-style snippet for Google (~120–155 characters)."
       },
       {
         "type": "textarea",
         "id": "seo_default_description",
         "label": "Default meta description (fallback)",
-        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+        "default": "Experience the epitome of style with designer fashion jewellery. Explore a stunning collection that complements your personality.",
         "info": "Used when a page has no SEO description."
       },
       {
