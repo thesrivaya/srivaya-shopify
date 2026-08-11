@@ -60,7 +60,15 @@
   "newsletter": {
     "label": "Email",
     "success": "Thanks for subscribing",
-    "button_label": "Subscribe"
+    "button_label": "Subscribe",
+    "waitlist": {
+      "name": "Full name",
+      "email": "Email",
+      "mobile": "Mobile number",
+      "whatsapp": "WhatsApp number",
+      "button_label": "Notify me",
+      "success": "Thanks! We’ll notify you when we launch."
+    }
   },
   "accessibility": {
     "skip_to_text": "Skip to content",
