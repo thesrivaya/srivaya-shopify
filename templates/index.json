@@ -497,6 +497,7 @@
         "metric_BVRzKc",
         "metric_xBGkhP"
       ],
+      "disabled": true,
       "name": "Store Metrics",
       "settings": {
         "label": "Our quiet proof",
