@@ -1010,6 +1010,10 @@
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 48
       }
+    },
+    "17881985676b3226c7": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -1023,6 +1027,7 @@
     "creator_reviews_marquee_LP6jgD",
     "customer_reviews_marquee_9Q6UDy",
     "brand_promise_ipNWDk",
-    "faq_home"
+    "faq_home",
+    "17881985676b3226c7"
   ]
 }
